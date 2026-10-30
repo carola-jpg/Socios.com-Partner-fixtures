@@ -21,7 +21,7 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 50
     steps:
       - uses: actions/checkout@v4
 
@@ -33,7 +33,7 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Collect fixtures, update Excel, notify Slack
-        timeout-minutes: 35
+        timeout-minutes: 40
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           PYTHONUNBUFFERED: "1"
