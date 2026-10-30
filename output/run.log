@@ -1,283 +1,62 @@
 INFO Checking 53 partners
 INFO [1/53] AC Milan (0s elapsed, 0 requests so far)
-INFO Matched AC Milan -> AC Milan (id 103) in ita.1
 INFO ita.1: full date range refused, trying month by month
-INFO ita.1: month ranges refused, fetching day by day for 60 days
+INFO ita.1: month ranges refused, fetching day by day
 INFO ita.2: full date range refused, trying month by month
-INFO ita.2: month ranges refused, fetching day by day for 60 days
-INFO ita.coppa_italia: full date range refused, trying month by month
-INFO ita.coppa_italia: month ranges refused, fetching day by day for 60 days
-INFO ita.super_cup: full date range refused, trying month by month
-INFO ita.super_cup: month ranges refused, fetching day by day for 60 days
-INFO uefa.champions: full date range refused, trying month by month
-INFO uefa.champions: month ranges refused, fetching day by day for 60 days
-INFO uefa.champions_qual: full date range refused, trying month by month
-INFO uefa.champions_qual: month ranges refused, fetching day by day for 60 days
-INFO uefa.europa: full date range refused, trying month by month
-INFO uefa.europa: month ranges refused, fetching day by day for 60 days
-INFO uefa.europa_qual: full date range refused, trying month by month
-INFO uefa.europa_qual: month ranges refused, fetching day by day for 60 days
-INFO uefa.europa.conf: full date range refused, trying month by month
-INFO uefa.europa.conf: month ranges refused, fetching day by day for 60 days
-INFO uefa.europa.conf_qual: full date range refused, trying month by month
-INFO uefa.europa.conf_qual: month ranges refused, fetching day by day for 60 days
-INFO uefa.super_cup: full date range refused, trying month by month
-INFO uefa.super_cup: month ranges refused, fetching day by day for 60 days
-INFO [2/53] AS Roma (254s elapsed, 696 requests so far)
-INFO Matched AS Roma -> AS Roma (id 104) in ita.1
-INFO [3/53] Bologna (255s elapsed, 699 requests so far)
-INFO Matched Bologna -> Bologna (id 107) in ita.1
-INFO [4/53] FC Inter (256s elapsed, 701 requests so far)
-INFO Matched FC Inter -> Internazionale (id 110) in ita.1
-INFO [5/53] Juventus (257s elapsed, 705 requests so far)
-INFO Matched Juventus -> Juventus (id 111) in ita.1
-INFO [6/53] Napoli (258s elapsed, 708 requests so far)
-INFO Matched Napoli -> Napoli (id 114) in ita.1
-INFO [7/53] Palermo FC (260s elapsed, 711 requests so far)
-INFO Matched Palermo FC -> Palermo (id 2923) in ita.2
-INFO [8/53] Arsenal (260s elapsed, 713 requests so far)
-INFO Matched Arsenal -> Arsenal (id 359) in eng.1
-INFO eng.1: full date range refused, trying month by month
-INFO eng.1: month ranges refused, fetching day by day for 60 days
-INFO eng.2: full date range refused, trying month by month
-INFO eng.2: month ranges refused, fetching day by day for 60 days
-INFO eng.fa: full date range refused, trying month by month
-INFO eng.fa: month ranges refused, fetching day by day for 60 days
-INFO eng.league_cup: full date range refused, trying month by month
-INFO eng.league_cup: month ranges refused, fetching day by day for 60 days
-INFO eng.charity: full date range refused, trying month by month
-INFO eng.charity: month ranges refused, fetching day by day for 60 days
-INFO [9/53] Aston Villa (377s elapsed, 1032 requests so far)
-INFO Matched Aston Villa -> Aston Villa (id 362) in eng.1
-INFO [10/53] Crystal Palace (378s elapsed, 1036 requests so far)
-INFO Matched Crystal Palace -> Crystal Palace (id 384) in eng.1
-INFO [11/53] Everton (379s elapsed, 1039 requests so far)
-INFO Matched Everton -> Everton (id 368) in eng.1
-INFO [12/53] Leeds United (380s elapsed, 1041 requests so far)
-INFO Matched Leeds United -> Leeds United (id 357) in eng.1
-INFO [13/53] Manchester City (381s elapsed, 1043 requests so far)
-INFO Matched Manchester City -> Manchester City (id 382) in eng.1
-INFO [14/53] Tottenham Hotspur (382s elapsed, 1047 requests so far)
-INFO Matched Tottenham Hotspur -> Tottenham Hotspur (id 367) in eng.1
-INFO [15/53] AS Monaco (383s elapsed, 1049 requests so far)
-INFO Matched AS Monaco -> AS Monaco (id 174) in fra.1
-INFO fra.1: full date range refused, trying month by month
-INFO fra.1: month ranges refused, fetching day by day for 60 days
-INFO fra.2: full date range refused, trying month by month
-INFO fra.2: month ranges refused, fetching day by day for 60 days
-INFO fra.coupe_de_france: full date range refused, trying month by month
-INFO fra.coupe_de_france: month ranges refused, fetching day by day for 60 days
-INFO fra.super_cup: full date range refused, trying month by month
-INFO fra.super_cup: month ranges refused, fetching day by day for 60 days
-INFO [16/53] Olympique de Marseille (476s elapsed, 1305 requests so far)
-INFO Matched Olympique de Marseille -> Marseille (id 176) in fra.1
-INFO [17/53] Paris Saint-Germain (477s elapsed, 1308 requests so far)
-INFO Matched Paris Saint-Germain -> Paris Saint-Germain (id 160) in fra.1
-INFO [18/53] Atlético de Madrid (479s elapsed, 1313 requests so far)
-INFO Matched Atlético de Madrid -> Atlético Madrid (id 1068) in esp.1
-INFO esp.1: full date range refused, trying month by month
-INFO esp.1: month ranges refused, fetching day by day for 60 days
-INFO esp.2: full date range refused, trying month by month
-INFO esp.2: month ranges refused, fetching day by day for 60 days
-INFO esp.copa_del_rey: full date range refused, trying month by month
-INFO esp.copa_del_rey: month ranges refused, fetching day by day for 60 days
-INFO esp.super_cup: full date range refused, trying month by month
-INFO esp.super_cup: month ranges refused, fetching day by day for 60 days
-INFO [19/53] FC Barcelona (571s elapsed, 1568 requests so far)
-INFO Matched FC Barcelona -> Barcelona (id 83) in esp.1
-INFO [20/53] Levante UD (572s elapsed, 1571 requests so far)
-INFO Matched Levante UD -> Levante (id 1538) in esp.1
-INFO [21/53] Real Sociedad (573s elapsed, 1573 requests so far)
-INFO Matched Real Sociedad -> Real Sociedad (id 89) in esp.1
-INFO [22/53] Sevilla (574s elapsed, 1576 requests so far)
-INFO Matched Sevilla -> Sevilla (id 243) in esp.1
-INFO [23/53] Valencia CF (575s elapsed, 1578 requests so far)
-INFO Matched Valencia CF -> Valencia (id 94) in esp.1
-INFO [24/53] Benfica (576s elapsed, 1580 requests so far)
-INFO Matched Benfica -> Benfica (id 1929) in por.1
-INFO por.1: full date range refused, trying month by month
-INFO por.1: month ranges refused, fetching day by day for 60 days
-INFO por.taca.portugal: full date range refused, trying month by month
-INFO por.taca.portugal: month ranges refused, fetching day by day for 60 days
-INFO [25/53] Fortuna Sittard (623s elapsed, 1710 requests so far)
-INFO Matched Fortuna Sittard -> Fortuna Sittard (id 143) in ned.1
-INFO ned.1: full date range refused, trying month by month
-INFO ned.1: month ranges refused, fetching day by day for 60 days
-INFO ned.2: full date range refused, trying month by month
-INFO ned.2: month ranges refused, fetching day by day for 60 days
-INFO ned.cup: full date range refused, trying month by month
-INFO ned.cup: month ranges refused, fetching day by day for 60 days
-INFO [26/53] Galatasaray (693s elapsed, 1901 requests so far)
-INFO Matched Galatasaray -> Galatasaray (id 432) in tur.1
-INFO tur.1: full date range refused, trying month by month
-INFO tur.1: month ranges refused, fetching day by day for 60 days
-INFO tur.cup: full date range refused, trying month by month
-INFO tur.cup: month ranges refused, fetching day by day for 0 days
-INFO [27/53] Goztepe (716s elapsed, 1969 requests so far)
-INFO Matched Goztepe -> Goztepe (id 789) in tur.1
-INFO [28/53] Samsunspor (717s elapsed, 1970 requests so far)
-INFO Matched Samsunspor -> Samsunspor (id 11429) in tur.1
-INFO [29/53] Trabzonspor (717s elapsed, 1971 requests so far)
-INFO Matched Trabzonspor -> Trabzonspor (id 997) in tur.1
-INFO [30/53] Apollon (718s elapsed, 1974 requests so far)
-INFO Matched Apollon -> Apollon Limassol (id 525) in cyp.1
+INFO ita.2: month ranges refused, fetching day by day
+INFO [2/53] AS Roma (23s elapsed, 678 requests so far)
+INFO [3/53] Bologna (23s elapsed, 681 requests so far)
+INFO [4/53] FC Inter (23s elapsed, 683 requests so far)
+INFO [5/53] Juventus (24s elapsed, 687 requests so far)
+INFO [6/53] Napoli (24s elapsed, 690 requests so far)
+INFO [7/53] Palermo FC (25s elapsed, 693 requests so far)
+INFO [8/53] Arsenal (25s elapsed, 695 requests so far)
+INFO [9/53] Aston Villa (36s elapsed, 1004 requests so far)
+INFO [10/53] Crystal Palace (36s elapsed, 1008 requests so far)
+INFO [11/53] Everton (37s elapsed, 1011 requests so far)
+INFO [12/53] Leeds United (37s elapsed, 1013 requests so far)
+INFO [13/53] Manchester City (37s elapsed, 1015 requests so far)
+INFO [14/53] Tottenham Hotspur (38s elapsed, 1019 requests so far)
+INFO [15/53] AS Monaco (38s elapsed, 1021 requests so far)
+INFO [16/53] Olympique de Marseille (47s elapsed, 1269 requests so far)
+INFO [17/53] Paris Saint-Germain (47s elapsed, 1272 requests so far)
+INFO [18/53] Atlético de Madrid (48s elapsed, 1277 requests so far)
+INFO [19/53] FC Barcelona (57s elapsed, 1524 requests so far)
+INFO [20/53] Levante UD (57s elapsed, 1527 requests so far)
+INFO [21/53] Real Sociedad (57s elapsed, 1529 requests so far)
+INFO [22/53] Sevilla (58s elapsed, 1532 requests so far)
+INFO [23/53] Valencia CF (58s elapsed, 1534 requests so far)
+INFO [24/53] Benfica (58s elapsed, 1536 requests so far)
+INFO [25/53] Fortuna Sittard (63s elapsed, 1662 requests so far)
+INFO [26/53] Galatasaray (69s elapsed, 1847 requests so far)
+INFO [27/53] Goztepe (71s elapsed, 1911 requests so far)
+INFO [28/53] Samsunspor (72s elapsed, 1912 requests so far)
+INFO [29/53] Trabzonspor (72s elapsed, 1913 requests so far)
+INFO [30/53] Apollon (72s elapsed, 1916 requests so far)
 WARNING TheSportsDB rate limit, waiting 120s
 WARNING TheSportsDB rate limit, waiting 120s
-INFO cyp.1: full date range refused, trying month by month
-INFO cyp.1: month ranges refused, fetching day by day for 60 days
-INFO [31/53] Dinamo Zagreb (1048s elapsed, 2039 requests so far)
-INFO Matched Dinamo Zagreb -> Dinamo Zagreb (id 597) in uefa.champions_qual
-INFO cro.1: full date range refused, trying month by month
-INFO cro.1: month ranges refused, fetching day by day for 0 days
-INFO [32/53] Legia Warsaw (1049s elapsed, 2044 requests so far)
-INFO pol.1: full date range refused, trying month by month
-INFO pol.1: month ranges refused, fetching day by day for 0 days
-INFO [33/53] Young Boys (1049s elapsed, 2047 requests so far)
-INFO Matched Young Boys -> Young Boys (id 2722) in sui.1
-INFO sui.1: full date range refused, trying month by month
-INFO sui.1: month ranges refused, fetching day by day for 60 days
-INFO [34/53] Atletico Mineiro (1073s elapsed, 2111 requests so far)
-INFO Matched Atletico Mineiro -> Atlético-MG (id 7632) in bra.1
-INFO bra.1: full date range refused, trying month by month
-INFO bra.1: month ranges refused, fetching day by day for 60 days
-INFO bra.2: full date range refused, trying month by month
-INFO bra.2: month ranges refused, fetching day by day for 60 days
-INFO bra.copa_do_brazil: full date range refused, trying month by month
-INFO bra.copa_do_brazil: month ranges refused, fetching day by day for 60 days
-INFO bra.camp.paulista: full date range refused, trying month by month
-INFO bra.camp.paulista: month ranges refused, fetching day by day for 60 days
-INFO bra.camp.carioca: full date range refused, trying month by month
-INFO bra.camp.carioca: month ranges refused, fetching day by day for 60 days
-INFO bra.camp.mineiro: full date range refused, trying month by month
-INFO bra.camp.mineiro: month ranges refused, fetching day by day for 60 days
-INFO bra.camp.gaucho: full date range refused, trying month by month
-INFO bra.camp.gaucho: month ranges refused, fetching day by day for 60 days
-INFO conmebol.libertadores: full date range refused, trying month by month
-INFO conmebol.libertadores: month ranges refused, fetching day by day for 60 days
-INFO conmebol.sudamericana: full date range refused, trying month by month
-INFO conmebol.sudamericana: month ranges refused, fetching day by day for 60 days
-INFO conmebol.recopa: full date range refused, trying month by month
-INFO conmebol.recopa: month ranges refused, fetching day by day for 60 days
-INFO [35/53] Bahia (1304s elapsed, 2745 requests so far)
-INFO Matched Bahia -> Bahia (id 9967) in bra.1
-INFO [36/53] Corinthians (1305s elapsed, 2748 requests so far)
-INFO Matched Corinthians -> Corinthians (id 874) in bra.1
-INFO [37/53] Flamengo (1307s elapsed, 2752 requests so far)
-INFO Matched Flamengo -> Flamengo (id 819) in bra.1
-INFO [38/53] Fluminense (1308s elapsed, 2757 requests so far)
-INFO Matched Fluminense -> Fluminense (id 3445) in bra.1
-INFO [39/53] Palmeiras (1310s elapsed, 2761 requests so far)
-INFO Matched Palmeiras -> Palmeiras (id 2029) in bra.1
-INFO [40/53] Sao Paulo FC (1312s elapsed, 2765 requests so far)
-INFO Matched Sao Paulo FC -> São Paulo (id 2026) in bra.1
-INFO [41/53] SC Internacional (1313s elapsed, 2769 requests so far)
-INFO Matched SC Internacional -> Internacional (id 1936) in bra.1
-INFO [42/53] Vasco da Gama (1314s elapsed, 2772 requests so far)
-INFO Matched Vasco da Gama -> Vasco da Gama (id 3454) in bra.1
-INFO [43/53] Millonarios (1316s elapsed, 2776 requests so far)
-INFO Matched Millonarios -> Millonarios (id 5484) in col.1
-INFO col.1: full date range refused, trying month by month
-INFO col.1: month ranges refused, fetching day by day for 60 days
-INFO [44/53] JDT (1341s elapsed, 2842 requests so far)
-INFO Matched JDT -> Johor Darul Ta'zim (id 17689) in mys.1
-INFO mys.1: full date range refused, trying month by month
-INFO mys.1: month ranges refused, fetching day by day for 60 days
-INFO afc.champions: full date range refused, trying month by month
-INFO afc.champions: month ranges refused, fetching day by day for 60 days
-INFO afc.cup: full date range refused, trying month by month
-INFO afc.cup: month ranges refused, fetching day by day for 60 days
-INFO [45/53] Persija (1411s elapsed, 3033 requests so far)
-INFO Matched Persija -> Persija (id 8030) in idn.1
-INFO idn.1: full date range refused, trying month by month
-INFO idn.1: month ranges refused, fetching day by day for 60 days
-INFO [46/53] FIGC (Italy) (Men's Team) (1434s elapsed, 3097 requests so far)
-INFO Matched FIGC (Italy) (Men's Team) -> Italy (id 162) in fifa.friendly
-INFO fifa.friendly: full date range refused, trying month by month
-INFO fifa.friendly: month ranges refused, fetching day by day for 60 days
-INFO uefa.nations: full date range refused, trying month by month
-INFO uefa.nations: month ranges refused, fetching day by day for 60 days
-INFO fifa.worldq.uefa: full date range refused, trying month by month
-INFO fifa.worldq.uefa: month ranges refused, fetching day by day for 60 days
-INFO uefa.euroq: full date range refused, trying month by month
-INFO uefa.euroq: month ranges refused, fetching day by day for 60 days
-INFO fifa.world: full date range refused, trying month by month
-INFO fifa.world: month ranges refused, fetching day by day for 60 days
-INFO uefa.euro: full date range refused, trying month by month
-INFO uefa.euro: month ranges refused, fetching day by day for 60 days
-INFO [47/53] FIGC (Italy) (Women's Team) (1574s elapsed, 3480 requests so far)
-INFO Matched FIGC (Italy) (Women's Team) -> Italy (id 2792) in uefa.w.nations
-INFO fifa.friendly.w: full date range refused, trying month by month
-INFO fifa.friendly.w: month ranges refused, fetching day by day for 60 days
-INFO uefa.w.nations: full date range refused, trying month by month
-INFO uefa.w.nations: month ranges refused, fetching day by day for 60 days
-INFO fifa.wworldq.uefa: full date range refused, trying month by month
-INFO fifa.wworldq.uefa: month ranges refused, fetching day by day for 60 days
-INFO uefa.weuro: full date range refused, trying month by month
-INFO uefa.weuro: month ranges refused, fetching day by day for 60 days
-INFO fifa.wwc: full date range refused, trying month by month
-INFO fifa.wwc: month ranges refused, fetching day by day for 60 days
-INFO [48/53] FIGC (Italy) (U21 Team) (1695s elapsed, 3799 requests so far)
-INFO Matched FIGC (Italy) (U21 Team) -> Italy U21 (id 10343) in uefa.euro_u21_qual
-INFO uefa.euro_u21_qual: full date range refused, trying month by month
-INFO uefa.euro_u21_qual: month ranges refused, fetching day by day for 60 days
-INFO uefa.euro_u21: full date range refused, trying month by month
-INFO uefa.euro_u21: month ranges refused, fetching day by day for 60 days
-INFO fifa.friendly_u21: full date range refused, trying month by month
-INFO fifa.friendly_u21: month ranges refused, fetching day by day for 60 days
-INFO [49/53] Belgian Football Association (1770s elapsed, 3991 requests so far)
-INFO Matched Belgian Football Association -> Belgium (id 459) in fifa.friendly
-INFO [50/53] Portugal (FPF) (1772s elapsed, 3997 requests so far)
-INFO Matched Portugal (FPF) -> Portugal (id 482) in fifa.friendly
-INFO [51/53] Scotland Football Association (1775s elapsed, 4003 requests so far)
-INFO Matched Scotland Football Association -> Scotland (id 580) in fifa.friendly
-INFO [52/53] Spanish Football Federation (1777s elapsed, 4009 requests so far)
-INFO Matched Spanish Football Federation -> Spain (id 164) in fifa.friendly
-INFO [53/53] South Africa Football Association (1779s elapsed, 4015 requests so far)
-INFO Matched South Africa Football Association -> South Africa (id 467) in fifa.friendly
-INFO fifa.worldq.caf: full date range refused, trying month by month
-INFO fifa.worldq.caf: month ranges refused, fetching day by day for 60 days
-INFO caf.nations_qual: full date range refused, trying month by month
-INFO caf.nations_qual: month ranges refused, fetching day by day for 60 days
-INFO caf.nations: full date range refused, trying month by month
-INFO caf.nations: month ranges refused, fetching day by day for 60 days
-INFO New: 513, changed: 0, upcoming: 513, past: 0
-INFO Slack not sent (SLACK_WEBHOOK_URL not set). Message preview:
-[
- {
-  "text": "Partner fixtures: first load, 513 fixtures",
-  "blocks": [
-   {
-    "type": "header",
-    "text": {
-     "type": "plain_text",
-     "text": ":soccer: Partner fixtures are set up"
-    }
-   },
-   {
-    "type": "section",
-    "text": {
-     "type": "mrkdwn",
-     "text": "First load found *513 upcoming fixtures* for *48 partners*. From now on this channel gets a message every Monday and Friday when new fixtures are announced or kick-off times, dates or stadiums change."
-    }
-   },
-   {
-    "type": "context",
-    "elements": [
-     {
-      "type": "mrkdwn",
-      "text": ":page_facing_up: <https://github.com/carola-jpg/Socios.com-Partner-fixtures/raw/main/output/fixtures.xlsx|Download the full fixture list (Excel)>"
-     }
-    ]
-   },
-   {
-    "type": "context",
-    "elements": [
-     {
-      "type": "mrkdwn",
-      "text": ":warning: Not found on ESPN: Legia Warsaw. See the Coverage sheet."
-     }
-    ]
-   }
-  ]
- }
-]
+INFO [31/53] Dinamo Zagreb (380s elapsed, 1979 requests so far)
+INFO [32/53] Legia Warsaw (380s elapsed, 1982 requests so far)
+INFO [33/53] Young Boys (380s elapsed, 1983 requests so far)
+INFO [34/53] Atletico Mineiro (383s elapsed, 2045 requests so far)
+INFO [35/53] Bahia (404s elapsed, 2659 requests so far)
+INFO [36/53] Corinthians (405s elapsed, 2662 requests so far)
+INFO [37/53] Flamengo (405s elapsed, 2666 requests so far)
+INFO [38/53] Fluminense (406s elapsed, 2671 requests so far)
+INFO [39/53] Palmeiras (406s elapsed, 2675 requests so far)
+INFO [40/53] Sao Paulo FC (407s elapsed, 2679 requests so far)
+INFO [41/53] SC Internacional (408s elapsed, 2683 requests so far)
+INFO [42/53] Vasco da Gama (408s elapsed, 2686 requests so far)
+INFO [43/53] Millonarios (409s elapsed, 2690 requests so far)
+INFO [44/53] JDT (411s elapsed, 2754 requests so far)
+INFO [45/53] Persija (417s elapsed, 2939 requests so far)
+INFO [46/53] FIGC (Italy) (Men's Team) (419s elapsed, 3001 requests so far)
+INFO [47/53] FIGC (Italy) (Women's Team) (432s elapsed, 3372 requests so far)
+INFO [48/53] FIGC (Italy) (U21 Team) (443s elapsed, 3681 requests so far)
+INFO [49/53] Belgian Football Association (449s elapsed, 3867 requests so far)
+INFO [50/53] Portugal (FPF) (450s elapsed, 3873 requests so far)
+INFO [51/53] Scotland Football Association (451s elapsed, 3879 requests so far)
+INFO [52/53] Spanish Football Federation (452s elapsed, 3885 requests so far)
+INFO [53/53] South Africa Football Association (453s elapsed, 3891 requests so far)
+INFO New: 0, changed: 0, upcoming: 513, past: 0
+INFO Nothing new to report to Slack.
