@@ -6,7 +6,8 @@ international matches. It then:
 
 - updates **`output/fixtures.xlsx`** (download it from this repo), and
 - posts to **Slack** when new fixtures are announced or a date, kick-off time or
-  stadium changes.
+  stadium changes, for matches at least **5 days away** (closer matches are only in
+  the Excel file; change the number with an `ALERT_MIN_DAYS` repository variable).
 
 By default only **home** fixtures are kept. Cup and European matches turn up
 automatically once a team has qualified or been drawn, as do play-offs and other later
@@ -57,8 +58,8 @@ winter, 08:00 in summer). You can also run it any time with **Run workflow**.
 | Sheet | What's on it |
 |---|---|
 | About | When it was last updated, and a key to the colours |
-| Upcoming | Every announced fixture, earliest first. Green = new this run, yellow = changed, orange = no longer in the feed (check it) |
-| New & changed | Only what changed in the latest run. It's the same list that went to Slack |
+| Upcoming | Every announced fixture, earliest first, with kick-off in local time and UTC. Green = new this run, yellow = changed, orange = no longer in the feed (check it) |
+| New & changed | Only what changed in the latest run. Slack got the same list, minus matches less than 5 days away |
 | By partner | Number of upcoming fixtures and the next match for each partner |
 | Coverage | Which competitions were checked for each partner and what was found |
 | Past | Fixtures whose date has passed |

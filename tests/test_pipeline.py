@@ -184,5 +184,14 @@ def main():
     print("\nAll checks passed")
 
 
+def test_alert_window():
+    now = datetime(2026, 11, 2, 7, tzinfo=timezone.utc)
+    assert not run.far_enough({"date_utc": "2026-11-04T19:45Z"}, now, 5)   # 2 days away
+    assert not run.far_enough({"date_utc": "2026-11-07T06:59Z"}, now, 5)   # just under 5 days
+    assert run.far_enough({"date_utc": "2026-11-07T07:00Z"}, now, 5)       # exactly 5 days
+    assert run.far_enough({"date_utc": ""}, now, 5)                        # date not set yet
+
+
 if __name__ == "__main__":
+    test_alert_window()
     main()

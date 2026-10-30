@@ -7,7 +7,7 @@ import json
 import logging
 import os
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 from . import excel, slack, state
 from .collect import collect, load_partners
@@ -21,6 +21,23 @@ IDS = os.path.join(ROOT, "data", "team_ids.json")
 EXCEL = os.path.join(ROOT, "output", "fixtures.xlsx")
 
 log = logging.getLogger("fixtures")
+
+# Slack only mentions matches at least this many days away (the Excel file still lists all).
+ALERT_MIN_DAYS = int(os.environ.get("ALERT_MIN_DAYS") or 5)
+
+
+def far_enough(r: dict, now: datetime, days: int = ALERT_MIN_DAYS) -> bool:
+    """True if the match is at least `days` days after `now`, or has no date yet."""
+    iso = r.get("date_utc") or ""
+    if not iso:
+        return True
+    try:
+        dt = datetime.fromisoformat(iso.replace("Z", "+00:00"))
+    except ValueError:
+        return True
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt >= now + timedelta(days=days)
 
 
 def excel_url() -> str | None:
@@ -79,7 +96,12 @@ def main(argv=None, espn: ESPN | None = None, now: datetime | None = None,
              counts["upcoming"], counts["past"])
 
     missing = sorted({c["partner"] for c in coverage if c["result"].startswith("Team not found")})
-    messages = slack.build_messages(added, changed, excel_url(), first_run, counts["upcoming"], missing)
+    alert_new = [r for r in added if far_enough(r, now)]
+    alert_changed = [r for r in changed if far_enough(r, now)]
+    skipped = len(added) + len(changed) - len(alert_new) - len(alert_changed)
+    if skipped:
+        log.info("Not sent to Slack: %d new/changed fixture(s) less than %d days away", skipped, ALERT_MIN_DAYS)
+    messages = slack.build_messages(alert_new, alert_changed, excel_url(), first_run, counts["upcoming"], missing)
     if not messages:
         log.info("Nothing new to report to Slack.")
     elif args.no_slack or not webhook:

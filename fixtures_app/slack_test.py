@@ -11,7 +11,7 @@ import sys
 from datetime import datetime, timezone
 
 from . import slack, state
-from .run import STATE, excel_url
+from .run import ALERT_MIN_DAYS, STATE, excel_url, far_enough
 
 
 def main() -> int:
@@ -25,15 +25,16 @@ def main() -> int:
               "(it should start with https://hooks.slack.com/).")
         return 3
 
-    now = datetime.now(timezone.utc).isoformat()
-    upcoming = sorted((r for r in state.load(STATE).values() if (r.get("date_utc") or "") >= now),
+    now = datetime.now(timezone.utc)
+    upcoming = sorted((r for r in state.load(STATE).values() if far_enough(r, now)),
                       key=lambda r: r.get("date_utc") or "")[:3]
     sample = [dict(r, change_note="New") for r in upcoming]
     messages = slack.build_messages(sample, [], excel_url(), False, len(sample), [])
     intro = {"type": "section", "text": {"type": "mrkdwn", "text":
              ":test_tube: *This is a test message.* Real alerts look like this and arrive on Monday "
-             "and Friday mornings when fixtures are announced or change. Below are the next "
-             f"{len(sample)} upcoming fixtures as an example."}}
+             "and Friday mornings when fixtures at least "
+             f"{ALERT_MIN_DAYS} days away are announced or change. Below are {len(sample)} upcoming "
+             "fixtures as an example."}}
     if messages:
         messages[0]["blocks"].insert(0, intro)
         messages[0]["text"] = "Partner fixtures: test message"

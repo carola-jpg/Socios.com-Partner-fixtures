@@ -21,4 +21,5 @@ jobs:
       - name: Send a test message to Slack
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          ALERT_MIN_DAYS: ${{ vars.ALERT_MIN_DAYS }}
         run: python -m fixtures_app.slack_test
