@@ -1,0 +1,105 @@
+"""Entry point: python -m fixtures_app.run"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import logging
+import os
+import sys
+from datetime import datetime, timezone
+
+from . import excel, slack, state
+from .collect import collect, load_partners
+from .espn import ESPN
+from .tsdb import TheSportsDB
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PARTNERS = os.path.join(ROOT, "config", "partners.csv")
+STATE = os.path.join(ROOT, "data", "fixtures.json")
+IDS = os.path.join(ROOT, "data", "team_ids.json")
+EXCEL = os.path.join(ROOT, "output", "fixtures.xlsx")
+
+log = logging.getLogger("fixtures")
+
+
+def excel_url() -> str | None:
+    if os.environ.get("EXCEL_URL"):
+        return os.environ["EXCEL_URL"]
+    server, repo = os.environ.get("GITHUB_SERVER_URL"), os.environ.get("GITHUB_REPOSITORY")
+    if server and repo:
+        branch = os.environ.get("GITHUB_REF_NAME", "main")
+        return f"{server}/{repo}/raw/{branch}/output/fixtures.xlsx"
+    return None
+
+
+def main(argv=None, espn: ESPN | None = None, now: datetime | None = None,
+         tsdb: TheSportsDB | None = None) -> int:
+    ap = argparse.ArgumentParser(description="Collect partner fixtures, update Excel, notify Slack")
+    ap.add_argument("--no-slack", action="store_true", help="don't post to Slack")
+    ap.add_argument("--dump", metavar="DIR", help="save raw ESPN responses here (for debugging)")
+    args = ap.parse_args(argv)
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
+
+    now = now or datetime.now(timezone.utc)
+    partners = load_partners(PARTNERS)
+    id_cache = state.load(IDS)
+    espn = espn or ESPN(dump_dir=args.dump)
+
+    log.info("Checking %d partners", len(partners))
+    fetched, coverage = collect(partners, espn, id_cache, tsdb=tsdb, today=now.date())
+    old = state.load(STATE)
+    first_run = not old
+    webhook = os.environ.get("SLACK_WEBHOOK_URL", "")
+
+    # Guard against an ESPN outage wiping everything: if nothing came back, change nothing.
+    if not fetched and old:
+        log.error("ESPN returned no fixtures at all; keeping the previous data unchanged.")
+        if webhook and not args.no_slack:
+            slack.post(webhook, [{"text": ":warning: Partner fixtures: ESPN returned no data this run, "
+                                          "so nothing was updated. It will try again at the next run."}])
+        return 1
+
+    new_state, added, changed = state.merge(old, fetched, now)
+
+    # Future fixtures we knew about but that weren't in today's feed: flag them for a manual check.
+    seen = {state.key(f) for f in fetched}
+    for k, rec in new_state.items():
+        if k in seen:
+            continue
+        dt = excel.uk_dt(rec.get("date_utc", ""))
+        if dt and dt >= now and not rec.get("change_note", "").startswith("Not in latest feed"):
+            rec["change_note"] = "Not in latest feed – may have moved or been cancelled, please check"
+
+    state.save(STATE, new_state)
+    state.save(IDS, id_cache)
+    os.makedirs(os.path.dirname(EXCEL), exist_ok=True)
+    counts = excel.write(EXCEL, new_state, added, changed, coverage, now)
+    log.info("New: %d, changed: %d, upcoming: %d, past: %d", len(added), len(changed),
+             counts["upcoming"], counts["past"])
+
+    missing = sorted({c["partner"] for c in coverage if c["result"].startswith("Team not found")})
+    messages = slack.build_messages(added, changed, excel_url(), first_run, counts["upcoming"], missing)
+    if not messages:
+        log.info("Nothing new to report to Slack.")
+    elif args.no_slack or not webhook:
+        log.info("Slack not sent (%s). Message preview:\n%s",
+                 "--no-slack" if args.no_slack else "SLACK_WEBHOOK_URL not set",
+                 json.dumps(messages, indent=1, ensure_ascii=False)[:4000])
+    else:
+        slack.post(webhook, messages)
+        log.info("Posted %d Slack message(s)", len(messages))
+
+    # Summary for the GitHub Actions run page
+    summary = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary:
+        with open(summary, "a") as f:
+            f.write(f"### Partner fixtures\n\n- New: {len(added)}\n- Changed: {len(changed)}\n"
+                    f"- Upcoming in total: {counts['upcoming']}\n")
+            if missing:
+                f.write(f"- Not found on ESPN: {', '.join(missing)}\n")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

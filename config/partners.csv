@@ -1,0 +1,54 @@
+partner,espn_names,group,fixtures,away_competitions,extra_competitions,espn_id,active
+AC Milan,AC Milan|Milan,ITA,home,,,,yes
+AS Roma,AS Roma|Roma,ITA,home,,,,yes
+Bologna,Bologna,ITA,home,,,,yes
+FC Inter,Internazionale|Inter Milan|Inter,ITA,home,,,,yes
+Juventus,Juventus,ITA,home,,,,yes
+Napoli,Napoli,ITA,home,,,,yes
+Palermo FC,Palermo,ITA,home,,,,yes
+Arsenal,Arsenal,ENG,home,,,,yes
+Aston Villa,Aston Villa,ENG,home,,,,yes
+Crystal Palace,Crystal Palace,ENG,home,,,,yes
+Everton,Everton,ENG,home,,,,yes
+Leeds United,Leeds United|Leeds,ENG,home,,,,yes
+Manchester City,Manchester City|Man City,ENG,home,,,,yes
+Tottenham Hotspur,Tottenham Hotspur|Tottenham,ENG,home,,,,yes
+AS Monaco,AS Monaco|Monaco,FRA,home,,,,yes
+Olympique de Marseille,Marseille|Olympique de Marseille,FRA,home,,,,yes
+Paris Saint-Germain,Paris Saint-Germain|PSG,FRA,home,,,,yes
+Atlético de Madrid,Atlético Madrid|Atletico Madrid|Atlético de Madrid,ESP,home,,,,yes
+FC Barcelona,Barcelona|FC Barcelona,ESP,home,,,,yes
+Levante UD,Levante,ESP,home,,,,yes
+Real Sociedad,Real Sociedad,ESP,home,,,,yes
+Sevilla,Sevilla,ESP,home,,,,yes
+Valencia CF,Valencia,ESP,home,,,,yes
+Benfica,Benfica,POR,home,,,,yes
+Fortuna Sittard,Fortuna Sittard,NED,home,,,,yes
+Galatasaray,Galatasaray,TUR,home,,,,yes
+Goztepe,Göztepe|Goztepe,TUR,home,,,,yes
+Samsunspor,Samsunspor,TUR,home,,,,yes
+Trabzonspor,Trabzonspor,TUR,home,,,,yes
+Apollon,Apollon Limassol|Apollon,CYP,home,,,,yes
+Dinamo Zagreb,Dinamo Zagreb|GNK Dinamo Zagreb,CRO,home,,,,yes
+Legia Warsaw,Legia Warsaw|Legia Warszawa|Legia,POL,home,,,,yes
+Young Boys,Young Boys|BSC Young Boys,SUI,home,,,,yes
+Atletico Mineiro,Atlético-MG|Atletico-MG|Atlético Mineiro|Atletico Mineiro,BRA,home,,,,yes
+Bahia,Bahia,BRA,home,,,,yes
+Corinthians,Corinthians,BRA,home,,,,yes
+Flamengo,Flamengo,BRA,home,,,,yes
+Fluminense,Fluminense,BRA,home,,,,yes
+Palmeiras,Palmeiras,BRA,home,,,,yes
+Sao Paulo FC,São Paulo|Sao Paulo,BRA,home,,,,yes
+SC Internacional,Internacional,BRA,home,,,,yes
+Vasco da Gama,Vasco da Gama|Vasco,BRA,home,,,,yes
+Millonarios,Millonarios,COL,home,,,,yes
+JDT,Johor Darul Ta'zim|Johor Darul Tazim|JDT,MYS,home,,,,yes
+Persija,Persija Jakarta|Persija,IDN,home,,,,yes
+FIGC (Italy) (Men's Team),Italy,NAT_UEFA_MEN,home,,,,yes
+FIGC (Italy) (Women's Team),Italy,NAT_UEFA_WOMEN,home,,,,yes
+FIGC (Italy) (U21 Team),Italy U21|Italy,NAT_U21,home,,,,yes
+Belgian Football Association,Belgium,NAT_UEFA_MEN,home,,,,yes
+Portugal (FPF),Portugal,NAT_UEFA_MEN,home,,,,yes
+Scotland Football Association,Scotland,NAT_UEFA_MEN,home,,,,yes
+Spanish Football Federation,Spain,NAT_UEFA_MEN,home,,,,yes
+South Africa Football Association,South Africa,NAT_CAF_MEN,home,,,,yes

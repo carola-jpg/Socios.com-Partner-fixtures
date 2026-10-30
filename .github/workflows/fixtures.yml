@@ -1,0 +1,68 @@
+name: Partner fixtures
+
+on:
+  schedule:
+    # Every Monday and Friday at 07:00 UTC (07:00 UK in winter, 08:00 in summer)
+    - cron: "0 7 * * 1,5"
+  workflow_dispatch:
+    inputs:
+      debug:
+        description: "Save raw ESPN responses as a downloadable artifact"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: partner-fixtures
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Collect fixtures, update Excel, notify Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          if [ "${{ inputs.debug }}" = "true" ]; then
+            python -m fixtures_app.run --dump debug
+          else
+            python -m fixtures_app.run
+          fi
+
+      - name: Save updated data and Excel to the repo
+        run: |
+          git config user.name "fixtures-bot"
+          git config user.email "fixtures-bot@users.noreply.github.com"
+          git add data output
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Fixtures update $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fixtures-excel
+          path: output/fixtures.xlsx
+          retention-days: 30
+
+      - if: ${{ inputs.debug }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: espn-raw-responses
+          path: debug/
+          retention-days: 7
