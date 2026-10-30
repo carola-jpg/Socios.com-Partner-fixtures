@@ -42,9 +42,9 @@ GROUPS = {
     "TUR": ["tur.1", "tur.cup"] + UEFA_CLUB,  # tur.cup unverified
     # ESPN has no 2026-27 Cypriot season, so the league comes from TheSportsDB (id 4630)
     "CYP": ["tsdb:4630", "cyp.1"] + UEFA_CLUB,
-    "CRO": ["cro.1"] + UEFA_CLUB,  # cro.1 unverified
-    "POL": ["pol.1"] + UEFA_CLUB,  # pol.1 unverified
-    "SUI": ["sui.1"] + UEFA_CLUB,  # sui.1 unverified
+    "CRO": ["tsdb:4629"] + UEFA_CLUB,  # ESPN has no Croatian league
+    "POL": ["tsdb:4422"] + UEFA_CLUB,  # ESPN has no Polish league
+    "SUI": ["tsdb:4675", "sui.1"] + UEFA_CLUB,  # ESPN lists sui.1 but had no fixtures; tsdb:4675 unverified
     "BRA": [
         "bra.1",
         "bra.2",
@@ -57,7 +57,7 @@ GROUPS = {
     ] + CONMEBOL_CLUB,
     "COL": ["col.1"] + CONMEBOL_CLUB,
     "MYS": ["mys.1"] + AFC_CLUB,
-    "IDN": ["idn.1"] + AFC_CLUB,
+    "IDN": ["tsdb:4790", "idn.1"] + AFC_CLUB,  # ESPN lists idn.1 but had no fixtures
     # National teams
     "NAT_UEFA_MEN": [
         "fifa.friendly",
@@ -123,6 +123,10 @@ FALLBACK_NAMES = {
     "tur.cup": "Turkish Cup",
     "cyp.1": "Cypriot First Division",
     "tsdb:4630": "Cypriot First Division",
+    "tsdb:4629": "Croatian HNL",
+    "tsdb:4422": "Ekstraklasa",
+    "tsdb:4675": "Swiss Super League",
+    "tsdb:4790": "Indonesian Super League",
     "cro.1": "Croatian HNL",
     "pol.1": "Ekstraklasa",
     "sui.1": "Swiss Super League",
