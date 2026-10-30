@@ -11,6 +11,7 @@ import json
 import logging
 import os
 import time
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date, timedelta
 from typing import Callable
 
@@ -47,13 +48,14 @@ def _http_get(url: str) -> dict:
 
 
 class ESPN:
-    def __init__(self, get: Callable[[str], dict] | None = None, delay: float = 0.3, dump_dir: str | None = None):
+    def __init__(self, get: Callable[[str], dict] | None = None, delay: float = 0.05, dump_dir: str | None = None):
         self._get = get or _http_get
         self.delay = delay
         self.dump_dir = dump_dir
         self._cache: dict[str, dict] = {}
         self._failed: dict[str, str] = {}
         self.calls = 0
+        self.ranges_refused = 0  # competitions where ESPN refused every date range
 
     def get(self, url: str) -> dict:
         if url in self._cache:
@@ -115,35 +117,45 @@ class ESPN:
             q = a.strftime(fmt) if a == b else f"{a.strftime(fmt)}-{b.strftime(fmt)}"
             return self.get(f"{SITE}/{slug}/scoreboard?dates={q}&limit=1000").get("events", []) or []
 
-        try:
-            return fetch(start, end)
-        except NotAvailable:
-            log.info("%s: full date range refused, trying month by month", slug)
         events: dict[str, dict] = {}
-        try:
-            a = start
-            while a <= end:
-                b = min(a + timedelta(days=30), end)
-                for ev in fetch(a, b):
-                    events[str(ev.get("id"))] = ev
-                a = b + timedelta(days=1)
-            return list(events.values())
-        except NotAvailable:
-            log.info("%s: month ranges refused, fetching day by day for %d days", slug, daily_fallback_days)
-        misses = 0
-        for i in range(daily_fallback_days):
-            d = start + timedelta(days=i)
-            if d > end:
-                break
+        # ESPN has refused ranges for every league so far; after two refusals, stop asking.
+        if self.ranges_refused < 2:
             try:
-                for ev in fetch(d, d):
-                    events[str(ev.get("id"))] = ev
-                misses = 0
+                return fetch(start, end)
             except NotAvailable:
-                misses += 1
-                if misses >= 5 and not events:
-                    log.info("%s: no single day works either, giving up", slug)
-                    break
+                log.info("%s: full date range refused, trying month by month", slug)
+            try:
+                a = start
+                while a <= end:
+                    b = min(a + timedelta(days=30), end)
+                    for ev in fetch(a, b):
+                        events[str(ev.get("id"))] = ev
+                    a = b + timedelta(days=1)
+                return list(events.values())
+            except NotAvailable:
+                self.ranges_refused += 1
+                log.info("%s: month ranges refused, fetching day by day", slug)
+        days = [start + timedelta(days=i) for i in range(daily_fallback_days)
+                if start + timedelta(days=i) <= end]
+        if not days:
+            return []
+
+        def one_day(d: date) -> list[dict] | None:
+            try:
+                return fetch(d, d)
+            except NotAvailable:
+                return None
+
+        # Probe the first few days; if none work, the competition isn't really there.
+        first = [one_day(d) for d in days[:3]]
+        if all(r is None for r in first):
+            log.info("%s: single days refused too, giving up", slug)
+            return []
+        with ThreadPoolExecutor(max_workers=6) as pool:
+            rest = list(pool.map(one_day, days[3:]))
+        for got in first + rest:
+            for ev in got or []:
+                events[str(ev.get("id"))] = ev
         return list(events.values())
 
 
