@@ -10,6 +10,8 @@ from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 
+from .timezones import local_and_utc
+
 UK = ZoneInfo("Europe/London")
 FONT = "Arial"
 HEADER_FILL = PatternFill("solid", fgColor="1F3864")
@@ -18,7 +20,8 @@ CHANGED_FILL = PatternFill("solid", fgColor="FFF2CC")
 WARN_FILL = PatternFill("solid", fgColor="FCE4D6")
 
 FIXTURE_COLS = [
-    ("Date", 14), ("Day", 6), ("Kick-off (UK)", 12), ("Time status", 12), ("Partner", 28),
+    ("Date (local)", 14), ("Day", 6), ("Kick-off (local)", 12), ("Local time zone", 12),
+    ("Kick-off (UTC)", 18), ("Time status", 12), ("Partner", 28),
     ("Competition", 28), ("Round", 18), ("Fixture", 42), ("Home/Away", 11), ("Stadium", 30),
     ("City", 16), ("Country", 14), ("Added", 12), ("Last change", 30),
 ]
@@ -35,12 +38,21 @@ def uk_dt(iso: str) -> datetime | None:
 
 
 def _fixture_row(r: dict, with_change: bool = True) -> list:
-    dt = uk_dt(r.get("date_utc", ""))
+    loc, utc, zone = local_and_utc(r)
+    day = loc or utc  # the local date where known, otherwise the UTC date
+    timed = bool(utc and r.get("time_confirmed"))
+    utc_text = ""
+    if timed:
+        utc_text = utc.strftime("%H:%M")
+        if loc and loc.date() != utc.date():
+            utc_text += utc.strftime(" (%a %d %b)")
     added = uk_dt(r.get("first_seen", ""))
     return [
-        dt.date() if dt else None,
-        dt.strftime("%a") if dt else "",
-        dt.strftime("%H:%M") if dt and r.get("time_confirmed") else "TBC",
+        day.date() if day else None,
+        day.strftime("%a") if day else "",
+        (loc.strftime("%H:%M") if loc else "unknown") if timed else "TBC",
+        zone or ("unknown" if utc else ""),
+        utc_text if timed else "TBC",
         "Confirmed" if r.get("time_confirmed") else "TBC",
         r.get("partner", ""),
         r.get("competition", ""),
@@ -111,7 +123,8 @@ def write(path: str, state: dict, run_new: list[dict], run_changed: list[dict], 
         ("Past: fixtures whose date has gone by.", False),
         ("", False),
         ("Kick-off 'TBC' means the date is announced but the league hasn't fixed the time yet.", False),
-        ("Times are UK time. Source: ESPN's public fixture feeds.", False),
+        ("Kick-off times are shown in the stadium's local time (with its UTC offset) and in UTC. "
+         "Sources: ESPN's public fixture feeds and TheSportsDB.", False),
     ]
     for text, bold in lines:
         ws.append([text])

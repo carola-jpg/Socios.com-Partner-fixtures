@@ -129,7 +129,7 @@ def main():
     assert "first load" in sent[-1][0]["text"], sent[-1]
     wb = load_workbook(run.EXCEL)
     up = list(wb["Upcoming"].iter_rows(min_row=2, values_only=True))
-    fixtures = {(r[4], r[7]) for r in up}
+    fixtures = {(r[6], r[9]) for r in up}
     print("Run 1 upcoming:", *sorted(fixtures), sep="\n  ")
     assert ("AC Milan", "AC Milan v Juventus") in fixtures
     assert ("AC Milan", "AC Milan v Bayern Munich") in fixtures
@@ -140,8 +140,10 @@ def main():
     assert ("Apollon", "Apollon Limassol v Omonia Nicosia") in fixtures  # via TheSportsDB
     assert ("Apollon", "Pafos v Apollon Limassol") not in fixtures       # away, excluded
     assert sum(1 for f in fixtures if f[1] == "Italy v Spain") == 1
-    roma = [r for r in up if r[7] == "AC Milan v Roma" or r[7] == "AC Milan v AS Roma"][0]
-    assert roma[2] == "TBC" and roma[9] == "San Siro", roma  # time TBC, stadium from team profile
+    roma = [r for r in up if r[9] == "AC Milan v Roma" or r[9] == "AC Milan v AS Roma"][0]
+    assert roma[2] == "TBC" and roma[4] == "TBC" and roma[11] == "San Siro", roma  # time TBC, stadium from team profile
+    timed = [r for r in up if r[2] not in ("TBC", None)]
+    assert timed and all(r[3].startswith("UTC") and r[4] not in ("TBC", "", None) for r in timed), timed[:3]
     cov = list(wb["Coverage"].iter_rows(min_row=2, values_only=True))
     assert any(c[0] == "Imaginary FC" and "not found" in c[3] for c in cov)
     assert any(c[2] == "cro.1" for c in cov) is False  # only ITA/ENG/NAT groups here
@@ -159,8 +161,8 @@ def main():
     assert "Date changed" in body and "Kick-off time confirmed" in body
     wb = load_workbook(run.EXCEL)
     up = list(wb["Upcoming"].iter_rows(min_row=2, values_only=True))
-    ars = [r for r in up if r[4] == "Arsenal"][0]
-    assert ars[13].startswith("Not in latest feed"), ars
+    ars = [r for r in up if r[6] == "Arsenal"][0]
+    assert ars[15].startswith("Not in latest feed"), ars
     nc = list(wb["New & changed"].iter_rows(min_row=2, values_only=True))
     assert len(nc) == 3, nc
 

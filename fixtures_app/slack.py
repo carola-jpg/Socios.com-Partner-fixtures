@@ -7,18 +7,28 @@ from collections import defaultdict
 
 import requests
 
-from .excel import uk_dt
+from .timezones import local_and_utc
 
 log = logging.getLogger(__name__)
 MAX_SECTION = 2900  # Slack limit is 3000 characters per section
 MAX_BLOCKS = 45  # Slack limit is 50 blocks per message
 
 
-def _when(r: dict, field: str = "date_utc") -> str:
-    dt = uk_dt(r.get(field) or "")
-    if not dt:
+def _when(r: dict, field: str = "date_utc", timed: bool | None = None) -> str:
+    """'Sat 31 Oct 2026, 14:00 local (UTC+1) / 13:00 UTC'."""
+    loc, utc, zone = local_and_utc(dict(r, date_utc=r.get(field) or ""))
+    if not utc:
         return "date TBC"
-    return dt.strftime("%a %d %b %Y") + (dt.strftime(", %H:%M") if r.get("time_confirmed") else ", time TBC")
+    day = loc or utc
+    text = day.strftime("%a %d %b %Y")
+    if not (r.get("time_confirmed") if timed is None else timed):
+        return text + ", time TBC"
+    utc_part = utc.strftime("%H:%M UTC")
+    if loc and loc.date() != utc.date():
+        utc_part += utc.strftime(" (%a %d %b)")
+    if loc:
+        return f"{text}, {loc.strftime('%H:%M')} local ({zone}) / {utc_part}"
+    return f"{text}, {utc_part}"
 
 
 def _line(r: dict) -> str:
@@ -29,7 +39,7 @@ def _line(r: dict) -> str:
     if r.get("change_note") and r.get("change_note") != "New":
         text += f"\n      _{r['change_note']}_"
         if r.get("previous_date_utc") and r.get("previous_date_utc") != r.get("date_utc"):
-            text += f" _(was {_when({'date_utc': r['previous_date_utc'], 'time_confirmed': True})})_"
+            text += f" _(was {_when(r, 'previous_date_utc', timed=True)})_"
     return "• " + text
 
 
