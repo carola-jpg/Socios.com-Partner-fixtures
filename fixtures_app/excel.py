@@ -45,7 +45,7 @@ def _fixture_row(r: dict, with_change: bool = True) -> list:
     if timed:
         utc_text = utc.strftime("%H:%M")
         if loc and loc.date() != utc.date():
-            utc_text += utc.strftime(" (%a %d %b)")
+            utc_text += utc.strftime(" (%d/%m/%Y)")
     added = uk_dt(r.get("first_seen", ""))
     return [
         day.date() if day else None,
@@ -85,7 +85,7 @@ def _sheet(wb, title, cols, rows, fills=None):
             if fill:
                 c.fill = fill
             if isinstance(c.value, datetime) or type(c.value).__name__ == "date":
-                c.number_format = "dd mmm yyyy"
+                c.number_format = "dd/mm/yyyy"
     ws.freeze_panes = "A2"
     if rows:
         ws.auto_filter.ref = f"A1:{get_column_letter(len(cols))}{len(rows) + 1}"
@@ -114,7 +114,7 @@ def write(path: str, state: dict, run_new: list[dict], run_changed: list[dict], 
     ws = wb.create_sheet("About")
     lines = [
         ("Partner fixtures", True),
-        (f"Updated {run_time.astimezone(UK).strftime('%a %d %b %Y, %H:%M')} UK time", False),
+        (f"Updated {run_time.astimezone(UK).strftime('%a %d/%m/%Y, %H:%M')} UK time", False),
         ("", False),
         ("Upcoming: every announced fixture for our partners, earliest first. Green = new this run, yellow = changed this run.", False),
         ("New & changed: only what changed since the previous run. Slack gets the same list, minus matches less than 5 days away.", False),

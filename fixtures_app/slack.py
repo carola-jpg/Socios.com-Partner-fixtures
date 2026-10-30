@@ -20,12 +20,12 @@ def _when(r: dict, field: str = "date_utc", timed: bool | None = None) -> str:
     if not utc:
         return "date TBC"
     day = loc or utc
-    text = day.strftime("%a %d %b %Y")
+    text = day.strftime("%a %d/%m/%Y")
     if not (r.get("time_confirmed") if timed is None else timed):
         return text + ", time TBC"
     utc_part = utc.strftime("%H:%M UTC")
     if loc and loc.date() != utc.date():
-        utc_part += utc.strftime(" (%a %d %b)")
+        utc_part += utc.strftime(" on %d/%m/%Y")
     if loc:
         return f"{text}, {loc.strftime('%H:%M')} local ({zone}) / {utc_part}"
     return f"{text}, {utc_part}"
