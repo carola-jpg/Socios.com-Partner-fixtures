@@ -27,20 +27,23 @@ class NotAvailable(Exception):
 
 
 def _http_get(url: str) -> dict:
+    """One retry for a network blip or server error; anything ESPN rejects outright
+    (4xx) is not retried, because asking again gives the same answer."""
     last = None
-    for attempt in range(3):
+    for attempt in range(2):
         try:
-            r = requests.get(url, headers=HEADERS, timeout=20)
-            if r.status_code in (400, 404):
+            r = requests.get(url, headers=HEADERS, timeout=12)
+            if 400 <= r.status_code < 500 and r.status_code != 429:
                 raise NotAvailable(f"{r.status_code} for {url}")
             r.raise_for_status()
             return r.json()
         except NotAvailable:
             raise
-        except Exception as e:  # network blip, 5xx, bad JSON
+        except Exception as e:  # network blip, 5xx, 429, bad JSON
             last = e
-            time.sleep(2 * (attempt + 1))
-    raise NotAvailable(f"failed after retries: {url} ({last})")
+            if attempt == 0:
+                time.sleep(3)
+    raise NotAvailable(f"failed after retry: {url} ({last})")
 
 
 class ESPN:
@@ -49,11 +52,20 @@ class ESPN:
         self.delay = delay
         self.dump_dir = dump_dir
         self._cache: dict[str, dict] = {}
+        self._failed: dict[str, str] = {}
+        self.calls = 0
 
     def get(self, url: str) -> dict:
         if url in self._cache:
             return self._cache[url]
-        data = self._get(url)
+        if url in self._failed:
+            raise NotAvailable(self._failed[url])
+        self.calls += 1
+        try:
+            data = self._get(url)
+        except NotAvailable as e:
+            self._failed[url] = str(e)
+            raise
         if self.delay:
             time.sleep(self.delay)
         self._cache[url] = data
@@ -118,6 +130,7 @@ class ESPN:
             return list(events.values())
         except NotAvailable:
             log.info("%s: month ranges refused, fetching day by day for %d days", slug, daily_fallback_days)
+        misses = 0
         for i in range(daily_fallback_days):
             d = start + timedelta(days=i)
             if d > end:
@@ -125,8 +138,12 @@ class ESPN:
             try:
                 for ev in fetch(d, d):
                     events[str(ev.get("id"))] = ev
+                misses = 0
             except NotAvailable:
-                continue
+                misses += 1
+                if misses >= 5 and not events:
+                    log.info("%s: no single day works either, giving up", slug)
+                    break
         return list(events.values())
 
 

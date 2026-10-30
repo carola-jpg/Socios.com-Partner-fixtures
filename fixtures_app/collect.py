@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import logging
+import time
 import re
 import unicodedata
 from dataclasses import dataclass, field
@@ -116,6 +117,7 @@ class Sources:
         self._events: dict[str, list[dict]] = {}
         self._names: dict[str, str] = {}
         self._errors: dict[str, str] = {}
+        self.team_ids: dict[str, set[str] | None] = {}  # ESPN team ids listed per competition
 
     def competition(self, slug: str) -> tuple[str, list[dict]] | None:
         """(competition name, parsed events) or None if no source has it."""
@@ -134,11 +136,15 @@ class Sources:
             return self._names[slug], events
         listed = True
         try:
-            lname, _ = self.espn.league_teams(slug)
+            lname, teams = self.espn.league_teams(slug)
+            self.team_ids[slug] = {str(t.get("id")) for t in teams}
         except NotAvailable:
             listed, lname = False, None
+            self.team_ids[slug] = None
         try:
-            raw = self.espn.scoreboard(slug, self.start, self.end)
+            # Day-by-day is only worth trying for a competition ESPN actually lists.
+            raw = self.espn.scoreboard(slug, self.start, self.end,
+                                       daily_fallback_days=60 if listed else 0)
         except NotAvailable:
             raw = []
         if not listed and not raw:
@@ -157,7 +163,10 @@ def collect(partners: list[Partner], espn: ESPN, id_cache: dict, tsdb: TheSports
     coverage: list[dict] = []
     seen_days: set[tuple[str, str]] = set()
 
-    for p in partners:
+    started = time.monotonic()
+    for n, p in enumerate(partners, 1):
+        log.info("[%d/%d] %s (%.0fs elapsed, %d requests so far)", n, len(partners), p.name,
+                 time.monotonic() - started, getattr(espn, "calls", 0))
         pid = resolve_partner_id(p, espn, id_cache)
         home_venue = None
         total = 0
@@ -172,7 +181,9 @@ def collect(partners: list[Partner], espn: ESPN, id_cache: dict, tsdb: TheSports
             comp_label, events = got
             events = list(events)
             # The team's own schedule as a second view of the same competition (ESPN only).
-            if pid and not slug.startswith("tsdb:"):
+            # Only for competitions whose team list includes this team: asking for the
+            # schedule of a team that isn't in a competition just wastes a request.
+            if pid and not slug.startswith("tsdb:") and pid in (src.team_ids.get(slug) or ()):
                 try:
                     events += [x for x in (parse_event(e) for e in espn.team_schedule(slug, pid)) if x]
                 except NotAvailable:

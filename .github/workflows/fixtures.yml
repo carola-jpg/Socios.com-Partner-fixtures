@@ -21,7 +21,7 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
 
@@ -33,16 +33,22 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Collect fixtures, update Excel, notify Slack
+        timeout-minutes: 35
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          PYTHONUNBUFFERED: "1"
         run: |
+          set -o pipefail
+          mkdir -p output
           if [ "${{ inputs.debug }}" = "true" ]; then
-            python -m fixtures_app.run --dump debug
+            python -m fixtures_app.run --dump debug 2>&1 | tee output/run.log
           else
-            python -m fixtures_app.run
+            python -m fixtures_app.run 2>&1 | tee output/run.log
           fi
 
-      - name: Save updated data and Excel to the repo
+      # Runs even if the step above failed or timed out, so output/run.log shows what happened.
+      - name: Save updated data, Excel and run log to the repo
+        if: ${{ always() }}
         run: |
           git config user.name "fixtures-bot"
           git config user.email "fixtures-bot@users.noreply.github.com"
@@ -54,13 +60,14 @@ jobs:
             git push
           fi
 
-      - uses: actions/upload-artifact@v4
+      - if: ${{ success() }}
+        uses: actions/upload-artifact@v4
         with:
           name: fixtures-excel
           path: output/fixtures.xlsx
           retention-days: 30
 
-      - if: ${{ inputs.debug }}
+      - if: ${{ always() && inputs.debug }}
         uses: actions/upload-artifact@v4
         with:
           name: espn-raw-responses
