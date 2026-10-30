@@ -56,7 +56,7 @@ def season_for(today: date) -> str:
 
 
 class TheSportsDB:
-    def __init__(self, get: Callable[[str], dict] | None = None, key: str | None = None, pause: float = 2.0):
+    def __init__(self, get: Callable[[str], dict] | None = None, key: str | None = None, pause: float = 4.0):
         self._get = get or _http_get
         self.key = key or os.environ.get("THESPORTSDB_KEY", "123")
         self.pause = pause
