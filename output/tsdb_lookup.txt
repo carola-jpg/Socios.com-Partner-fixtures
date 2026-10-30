@@ -1,0 +1,43 @@
+== Poland: 5 leagues
+5838	Polish Cup	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: Chemik Bydgoszcz, GKS Tychy, Górnik Łęczna, Odra Opole, Olimpia Grudziądz, Podbeskidzie Bielsko-Biala, Podhale Nowy Targ, Pogoń Siedlce, Polonia Środa Wielkopolska, Sandecja Nowy Sacz, Unia Skierniewice, Warta Poznań, Wigry Suwałki, Znicz Pruszków, Śląsk Wrocław II
+4422	Polish Ekstraklasa	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: Górnik Zabrze, Jagiellonia Białystok, Lech Poznań, Legia Warsaw, Motor Lublin, Piast Gliwice, Pogoń Szczecin, Radomiak Radom, Raków Częstochowa, Widzew Łódź, Wieczysta Kraków, Wisła Kraków, Wisła Płock, Zagłębie Lubin, Śląsk Wrocław
+4661	Polish I liga	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: Arka Gdynia, Bruk-Bet Termalica Nieciecza, Lechia Gdańsk, Miedź Legnica, Odra Opole, Pogoń Siedlce, Polonia Bytom, Polonia Warsaw, Puszcza Niepołomice, Stal Mielec, Stal Rzeszów, Unia Skierniewice, ŁKS Łódź
+5709	Polish II liga	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: Avia Świdnik, Chojniczanka Chojnice, Górnik Łęczna, Hutnik Kraków, Lechia Zielona Góra, Legia Warsaw II, Podhale Nowy Targ, Resovia Rzeszów, Sandecja Nowy Sacz, Stal Stalowa Wola, Zawisza Bydgoszcz, Znicz Pruszków, Świt Szczecin
+5798	Polish III liga Group I	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: Jagiellonia Białystok II, Mazovia Mińsk Mazowiecki, Mławianka Mława, Olimpia Elbląg, Olimpia Zambrów, Pelikan Łowicz, Polonia Lidzbark Warmiński, Warta Sieradz, Weszło, Widzew Łódź II, Wigry Suwałki, Wisła Płock II, ŁKS Łomża, Świt Nowy Dwór Mazowiecki
+== Croatia: 3 leagues
+4952	Croatian Druga HNL	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: BSK Bijelo Brdo, Cibalia, Croatia Zmijavci, Dubrava, Dugopolje, Hrvace, Jadran Luka Ploče, Karlovac, Kustošija, Mladost Ždralovi, Segesta Sisak, Sesvete, Vukovar
+4629	Croatian First Football League	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: Dinamo Zagreb, HNK Gorica, Hajduk Split, Istra 1961, Lokomotiva Zagreb, Osijek, Rijeka, Rudeš, Slaven Belupo Koprivnica, Varaždin
+5910	Croatian Second Football League	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: Bjelovar, Dugo Selo, Grobničan Čavle, Hrvatski Dragovoljac, Koprivnica, Lučko, Radnik Križevci, Slavonija Požega, Solin, Trnje Zagreb, Uljanik Pula
+== Switzerland: 5 leagues
+5936	Swiss 1. Liga Classic Group 1	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: Azzurri Bienne, Chênois, Coffrane, Echallens Région, Lancy, Lausanne-Sport II, Portalban/Gletterens, Prishtina Bern, Servette II, Sion II, Stade-Payerne, Vevey-Sports
+5937	Swiss 1. Liga Classic Group 2	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: Bassecourt, Black Stars, Buochs, Courtételle, Delémont, Grasshoppers II, Muri-Gümligen, Muttenz, Münsingen, Schötz, Solothurn, Thun II, Wohlen
+5938	Swiss 1. Liga Classic Group 3	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: Baden, Collina d'Oro, Dietikon, Eschen-Mauren, Freienbach, Gossau, Kosova Zürich, Locarno, St. Gallen II, Taverne, Thalwil, Tuggen, Wettswil-Bonstetten, Widnau
+4713	Swiss Challenge League	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: Aarau, Kriens, Neuchâtel Xamax, Rapperswil-Jona, Stade Lausanne Ouchy, Stade Nyonnais, Wil, Winterthur, Yverdon Sport, Étoile Carouge
+5489	Swiss Cup	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: Amical Saint-Prex, Bavois, Collex-Bossy, Courtételle, Genolier-Begnins, Kosova Neuchâtel, Liestal, Meyrin, Mutschellen, Regensdorf, Rotkreuz, Tuggen, Wiesendangen, Young Fellows Juventus, Zürich City
+== Indonesia: 1 leagues
+4790	Indonesian Super League	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: Arema, Bali United, Bhayangkara Presisi Lampung, Borneo Samarinda, Dewa United Banten, Garudayaksa, Java United, Madura United, PSIM Yogyakarta, PSS Sleman, Persib Bandung, Persija Jakarta, Persijap Jepara, Persik Kediri
+== Turkey: 5 leagues
+4676	Turkish 1 Lig	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: Antalyaspor, Bandırmaspor, Bodrum, Boluspor, Bursaspor, Esenler Erokspor, Fatih Karagümrük, Iğdır, Manisa, Pendikspor, Sarıyer, Sivasspor, Vanspor, Ümraniyespor, İstanbulspor
+4679	Turkish 2 Lig	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: 1461 Trabzon, Ankaragücü, Arnavutköy Belediyespor, Erbaaspor, Fethiyespor, Hatayspor, Isparta 32 Spor, Kahramanmaraş İstiklalspor, Karacabey Belediyespor, Kastamonuspor, Kütahyaspor, Menemen, Somaspor, İnegölspor, Şanlıurfaspor
+5868	Turkish 3 Lig Group 1	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: Amasyaspor, Beykoz Anadolu, Büyükçekmecegücü, Düzcespor, Fatsa Belediyespor, Galata, Karabük İdman Yurdu, Karadeniz Ereğli 1980, Küçükçekmece Sinopspor, Orduspor 1967, Pazarspor, Silivrispor, Tokat Belediyespor, Yalova FK 77, İnkılap
+5869	Turkish 3 Lig Group 2	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: 1922 Akşehirspor, Altay, Ayvalıkgücü Belediyespor, Balıkesirspor, Bigaspor, Bucaspor 1928, Bursa Yıldırımspor, Eskişehir Anadolu, Eskişehirspor, Etimesgutspor, Gaziemir GOG, Karşıyaka, Kepezspor, Söke 1970, Uşakspor
+5870	Turkish 3 Lig Group 3	season=2026-2027	events=15	upcoming=0	first_upcoming=-
+    teams: Adaletgücü, Adanaspor, Ağrı 1970, Bitlis 1916, Diyarbekirspor, Erciyes 38, Karaman, Kırıkkale, Kırşehir, Malatya Yeşilyurtspor, Niğde Belediyesispor, Osmaniyespor, Yeni Malatyaspor, Yeni Mersin İdmanyurdu, Yozgat Belediyesi Bozokspor
