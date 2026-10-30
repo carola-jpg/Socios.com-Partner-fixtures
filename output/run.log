@@ -4,61 +4,93 @@ INFO ita.1: full date range refused, trying month by month
 INFO ita.1: month ranges refused, fetching day by day
 INFO ita.2: full date range refused, trying month by month
 INFO ita.2: month ranges refused, fetching day by day
-INFO [2/53] AS Roma (20s elapsed, 678 requests so far)
-INFO [3/53] Bologna (21s elapsed, 681 requests so far)
-INFO [4/53] FC Inter (21s elapsed, 683 requests so far)
-INFO [5/53] Juventus (21s elapsed, 687 requests so far)
-INFO [6/53] Napoli (22s elapsed, 690 requests so far)
-INFO [7/53] Palermo FC (22s elapsed, 693 requests so far)
-INFO [8/53] Arsenal (22s elapsed, 695 requests so far)
-INFO [9/53] Aston Villa (31s elapsed, 1004 requests so far)
-INFO [10/53] Crystal Palace (32s elapsed, 1008 requests so far)
-INFO [11/53] Everton (32s elapsed, 1011 requests so far)
-INFO [12/53] Leeds United (32s elapsed, 1013 requests so far)
-INFO [13/53] Manchester City (33s elapsed, 1015 requests so far)
-INFO [14/53] Tottenham Hotspur (33s elapsed, 1019 requests so far)
-INFO [15/53] AS Monaco (33s elapsed, 1021 requests so far)
-INFO [16/53] Olympique de Marseille (41s elapsed, 1269 requests so far)
-INFO [17/53] Paris Saint-Germain (42s elapsed, 1272 requests so far)
-INFO [18/53] Atlético de Madrid (42s elapsed, 1277 requests so far)
-INFO [19/53] FC Barcelona (50s elapsed, 1524 requests so far)
-INFO [20/53] Levante UD (50s elapsed, 1527 requests so far)
-INFO [21/53] Real Sociedad (51s elapsed, 1529 requests so far)
-INFO [22/53] Sevilla (51s elapsed, 1532 requests so far)
-INFO [23/53] Valencia CF (51s elapsed, 1534 requests so far)
-INFO [24/53] Benfica (52s elapsed, 1536 requests so far)
-INFO [25/53] Fortuna Sittard (55s elapsed, 1662 requests so far)
-INFO [26/53] Galatasaray (64s elapsed, 1847 requests so far)
-INFO [27/53] Goztepe (66s elapsed, 1911 requests so far)
-INFO [28/53] Samsunspor (66s elapsed, 1912 requests so far)
-INFO [29/53] Trabzonspor (66s elapsed, 1913 requests so far)
-INFO [30/53] Apollon (66s elapsed, 1916 requests so far)
+INFO [2/53] AS Roma (38s elapsed, 678 requests so far)
+INFO [3/53] Bologna (38s elapsed, 681 requests so far)
+INFO [4/53] FC Inter (39s elapsed, 683 requests so far)
+INFO [5/53] Juventus (40s elapsed, 687 requests so far)
+INFO [6/53] Napoli (40s elapsed, 690 requests so far)
+INFO [7/53] Palermo FC (41s elapsed, 693 requests so far)
+INFO [8/53] Arsenal (42s elapsed, 695 requests so far)
+INFO [9/53] Aston Villa (59s elapsed, 1004 requests so far)
+INFO [10/53] Crystal Palace (60s elapsed, 1008 requests so far)
+INFO [11/53] Everton (61s elapsed, 1011 requests so far)
+INFO [12/53] Leeds United (62s elapsed, 1013 requests so far)
+INFO [13/53] Manchester City (62s elapsed, 1015 requests so far)
+INFO [14/53] Tottenham Hotspur (63s elapsed, 1019 requests so far)
+INFO [15/53] AS Monaco (63s elapsed, 1021 requests so far)
+INFO [16/53] Olympique de Marseille (77s elapsed, 1269 requests so far)
+INFO [17/53] Paris Saint-Germain (77s elapsed, 1272 requests so far)
+INFO [18/53] Atlético de Madrid (79s elapsed, 1277 requests so far)
+INFO [19/53] FC Barcelona (92s elapsed, 1524 requests so far)
+INFO [20/53] Levante UD (93s elapsed, 1527 requests so far)
+INFO [21/53] Real Sociedad (93s elapsed, 1529 requests so far)
+INFO [22/53] Sevilla (94s elapsed, 1532 requests so far)
+INFO [23/53] Valencia CF (94s elapsed, 1534 requests so far)
+INFO [24/53] Benfica (95s elapsed, 1536 requests so far)
+INFO [25/53] Fortuna Sittard (103s elapsed, 1662 requests so far)
+INFO [26/53] Galatasaray (113s elapsed, 1847 requests so far)
+INFO [27/53] Goztepe (117s elapsed, 1911 requests so far)
+INFO [28/53] Samsunspor (117s elapsed, 1912 requests so far)
+INFO [29/53] Trabzonspor (117s elapsed, 1913 requests so far)
+INFO [30/53] Apollon (118s elapsed, 1916 requests so far)
 WARNING TheSportsDB rate limit, waiting 120s
-WARNING TheSportsDB rate limit, waiting 120s
-INFO [31/53] Dinamo Zagreb (373s elapsed, 1979 requests so far)
-WARNING TheSportsDB rate limit, waiting 120s
-WARNING TheSportsDB rate limit, waiting 120s
-WARNING TheSportsDB rate limit, waiting 120s
-WARNING TheSportsDB rate limit, waiting 120s
-INFO [32/53] Legia Warsaw (939s elapsed, 1981 requests so far)
+INFO [31/53] Dinamo Zagreb (368s elapsed, 1979 requests so far)
 WARNING TheSportsDB rate limit, waiting 120s
 WARNING TheSportsDB rate limit, waiting 120s
 WARNING TheSportsDB rate limit, waiting 120s
+INFO [32/53] Legia Warsaw (896s elapsed, 1981 requests so far)
 WARNING TheSportsDB rate limit, waiting 120s
-INFO [33/53] Young Boys (1501s elapsed, 1981 requests so far)
+INFO [33/53] Young Boys (1176s elapsed, 1981 requests so far)
+INFO [34/53] Atletico Mineiro (1289s elapsed, 2043 requests so far)
+INFO [35/53] Bahia (1323s elapsed, 2657 requests so far)
+INFO [36/53] Corinthians (1324s elapsed, 2660 requests so far)
+INFO [37/53] Flamengo (1325s elapsed, 2664 requests so far)
+INFO [38/53] Fluminense (1326s elapsed, 2669 requests so far)
+INFO [39/53] Palmeiras (1327s elapsed, 2673 requests so far)
+INFO [40/53] Sao Paulo FC (1328s elapsed, 2677 requests so far)
+INFO [41/53] SC Internacional (1329s elapsed, 2681 requests so far)
+INFO [42/53] Vasco da Gama (1330s elapsed, 2684 requests so far)
+INFO [43/53] Millonarios (1331s elapsed, 2688 requests so far)
+INFO [44/53] JDT (1335s elapsed, 2752 requests so far)
+INFO [45/53] Persija (1345s elapsed, 2937 requests so far)
 WARNING TheSportsDB rate limit, waiting 120s
-WARNING TheSportsDB rate limit, waiting 120s
-INFO [34/53] Atletico Mineiro (1798s elapsed, 2043 requests so far)
-INFO [35/53] Bahia (1817s elapsed, 2657 requests so far)
-INFO [36/53] Corinthians (1818s elapsed, 2660 requests so far)
-INFO [37/53] Flamengo (1818s elapsed, 2664 requests so far)
-INFO [38/53] Fluminense (1819s elapsed, 2669 requests so far)
-INFO [39/53] Palmeiras (1819s elapsed, 2673 requests so far)
-INFO [40/53] Sao Paulo FC (1820s elapsed, 2677 requests so far)
-INFO [41/53] SC Internacional (1820s elapsed, 2681 requests so far)
-INFO [42/53] Vasco da Gama (1821s elapsed, 2684 requests so far)
-INFO [43/53] Millonarios (1821s elapsed, 2688 requests so far)
-INFO [44/53] JDT (1825s elapsed, 2752 requests so far)
-INFO [45/53] Persija (1830s elapsed, 2937 requests so far)
-WARNING TheSportsDB rate limit, waiting 120s
-WARNING TheSportsDB rate limit, waiting 120s
+INFO [46/53] FIGC (Italy) (Men's Team) (1628s elapsed, 2999 requests so far)
+INFO [47/53] FIGC (Italy) (Women's Team) (1649s elapsed, 3370 requests so far)
+INFO [48/53] FIGC (Italy) (U21 Team) (1666s elapsed, 3679 requests so far)
+INFO [49/53] Belgian Football Association (1675s elapsed, 3865 requests so far)
+INFO [50/53] Portugal (FPF) (1677s elapsed, 3871 requests so far)
+INFO [51/53] Scotland Football Association (1678s elapsed, 3877 requests so far)
+INFO [52/53] Spanish Football Federation (1679s elapsed, 3883 requests so far)
+INFO [53/53] South Africa Football Association (1680s elapsed, 3889 requests so far)
+INFO New: 41, changed: 0, upcoming: 554, past: 0
+INFO Slack not sent (SLACK_WEBHOOK_URL not set). Message preview:
+[
+ {
+  "text": ":soccer: 41 new fixtures",
+  "blocks": [
+   {
+    "type": "header",
+    "text": {
+     "type": "plain_text",
+     "text": ":soccer: 41 new fixtures"
+    }
+   },
+   {
+    "type": "section",
+    "text": {
+     "type": "mrkdwn",
+     "text": "*Dinamo Zagreb*\n• :new: Dinamo Zagreb v Istra 1961 · Croatian First Football League · Sat 21 Nov 2026, 16:00 · Stadion Maksimir\n• :new: Dinamo Zagreb v Osijek · Croatian First Football League · Sat 05 Dec 2026, 16:00 · Stadion Maksimir\n• :new: Dinamo Zagreb v Hajduk Split · Croatian First Football League · Sat 19 Dec 2026, 16:00 · Stadion Maksimir\n• :new: Dinamo Zagreb v Slaven Belupo Koprivnica · Croatian First Football League · Sat 23 Jan 2027, 16:00 · Stadion Maksimir\n• :new: Dinamo Zagreb v Rudeš · Croatian First Football League · Sat 06 Feb 2027, 16:00 · Stadion Maksimir\n• :new: Dinamo Zagreb v Varaždin · Croatian First Football League · Sat 13 Feb 2027, 16:00 · Stadion Maksimir\n• :new: Dinamo Zagreb v HNK Gorica · Croatian First Football League · Sat 27 Feb 2027, 16:00 · Stadion Maksimir\n• :new: Dinamo Zagreb v Lokomotiva Zagreb · Croatian First Football League · Sat 13 Mar 2027, 16:00 · Stadion Maksimir\n• :new: Dinamo Zagreb v Rijeka · Croatian First Football League · Sat 10 Apr 2027, 16:00 · Stadion Maksimir\n• :new: Dinamo Zagreb v Istra 1961 · Croatian First Football League · Sat 01 May 2027, 16:00 · Stadion Maksimir\n• :new: Dinamo Zagreb v Osijek · Croatian First Football League · Wed 12 May 2027, 16:00 · Stadion Maksimir\n• :new: Dinamo Zagreb v Hajduk Split · Croatian First Football League · Sat 22 May 2027, 16:00 · Stadion Maksimir"
+    }
+   },
+   {
+    "type": "section",
+    "text": {
+     "type": "mrkdwn",
+     "text": "*Legia Warsaw*\n• :new: Legia Warsaw v Raków Częstochowa · Polish Ekstraklasa · Sun 08 Nov 2026, 16:30 · Polish Army Stadium\n• :new: Legia Warsaw v Wieczysta Kraków · Polish Ekstraklasa · Sat 28 Nov 2026, 17:00 · Polish Army Stadium\n• :new: Legia Warsaw v Pogoń Szczecin · Polish Ekstraklasa · Sat 12 Dec 2026, 17:00 · Polish Army Stadium\n• :new: Legia Warsaw v Korona Kielce · Polish Ekstraklasa · Sat 06 Feb 2027, 17:00 · Polish Army Stadium\n• :new: Legia Warsaw v Piast Gliwice · Polish Ekstraklasa · Sat 20 Feb 2027, 17:00 · Polish Army Stadium\n• :new: Legia Warsaw v Motor Lublin · Polish Ekstraklasa · Sat 06 Mar 2027, 17:00 · Polish Army Stadium\n• :new: Legia Warsaw v Jagiellonia Białystok · Polish Ekstraklasa · Sat 20 Mar 2027, 17:00 · Polish Army Stadium\n• :new: Legia Warsaw v Cracovia · Polish Ekstraklasa · Sat 10 Apr 2027, 17:00 · Polish Army Stadium\n• :new: Legia Warsaw v Górnik Zabrze · Polish Ekstraklasa · Fri 23 Apr 2027, 17:00 · Polish Army Stadium\n• :new: Legia Warsaw v Wisła Płock · Polish Ekstraklasa · Sat 08 May 2027, 17:00 · Polish Army Stadium\n• :new: Legia Warsaw v GKS Katowice · Polish Ekstraklasa · Sat 22 May 2027, 17:00 · Polish Army Stadium"
+    }
+   },
+   {
+    "type": "section",
+    "text": {
+     "type": "mrkdwn",
+     "text": "*Persija*\n• :new: Persija Jakarta v Persebaya Surabaya · Indonesian Super League · Sat 07 Nov 2026, 12:00 · Stadion Internasional Jakarta\n• :new: Persija Jakarta v Garudayaksa · Indonesian Super League · Sat 28 Nov 2026, 12:00 · Stadion Internasional Jakarta\n• :new: Persija Jakarta v Bali United · Indonesian Super League · Sat 12 Dec 2026, 12:00 · Stadion Internasional Jakarta\n• :new: Persija Jakarta v Madura United · Indonesian Super League · Wed 16 Dec 2026, 08:30 · Stadion Internasional Jakarta\n• :new: Persija Jakarta v PSIM Yogyakarta · Indonesian Super League · Mon 08 Feb 2027, 13:30 · Stadion Internasional Jakarta\n• :new: Persija Jakarta v Borneo Samarinda · Indonesian Super League · Sat 20 Feb 2027, 13:30 · Stadion Internasional Jakarta\n• :new: Persija Jakarta v Isenmulang Kalteng · Indonesian Super League · Sun 21 Mar 2027, 08:30 · Stadion Internasional Jakarta\n• :new: Persija Jakarta v PSM Makassar · Indonesian Super League · Sat 03 Apr 2027, 13:00 · Stadion Inte
