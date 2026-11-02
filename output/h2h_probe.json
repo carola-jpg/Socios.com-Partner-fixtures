@@ -1,391 +1,1787 @@
 {
- "uefa.champions": {
-  "status": 200,
-  "match": "Galatasaray v VfB Stuttgart",
-  "top_keys": [
-   "boxscore",
-   "broadcasts",
-   "format",
-   "gameInfo",
-   "hasOdds",
-   "header",
-   "lastFiveGames",
-   "leaders",
-   "meta",
-   "news",
-   "odds",
-   "pickcenter",
-   "rosters",
-   "standings",
-   "wallclockAvailable"
-  ],
-  "h2h_type": "NoneType",
-  "has_lastFiveGames": true,
-  "has_boxscore": true,
-  "has_standings": true,
-  "has_gameInfo": true,
-  "has_odds": true,
-  "lastFive_sample": "[{\"displayOrder\": 1, \"team\": {\"id\": \"432\", \"uid\": \"s:600~t:432\", \"displayName\": \"Galatasaray\", \"abbreviation\": \"GAL\", \"links\": [{\"href\": \"https://www.espn.com/soccer/club/_/id/432/galatasaray\", \"text\": \"Clubhouse\"}, {\"href\": \"https://www.espn.com/soccer/team/fixtures/_/id/432/galatasaray\", \"text\": \"Fixtures\"}], \"logo\": \"https://a.espncdn.com/i/teamlogos/soccer/500/432.png\", \"logos\": [{\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500/432.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"default\"], \"lastUpdated\": \"2019-05-08T16:07Z\"}, {\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500-dark/432.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"dark\"], \"lastUpdated\": \"2019-05-08T16:07Z\"}]}, \"events\": [{\"id\": \"401915435\", \"links\": [{\"href\": \"https://www.espn.c"
+ "eng.1:368:Coventry": {
+  "2021": {
+   "events": 38,
+   "meetings": []
+  },
+  "2022": {
+   "events": 38,
+   "meetings": []
+  },
+  "2023": {
+   "events": 38,
+   "meetings": []
+  },
+  "2024": {
+   "events": 38,
+   "meetings": []
+  },
+  "2025": {
+   "events": 38,
+   "meetings": []
+  }
  },
- "bra.1": {
-  "status": 200,
-  "match": "Internacional v Coritiba",
-  "top_keys": [
-   "boxscore",
-   "broadcasts",
-   "format",
-   "gameInfo",
-   "hasOdds",
-   "header",
-   "lastFiveGames",
-   "leaders",
-   "meta",
-   "news",
-   "odds",
-   "pickcenter",
-   "rosters",
-   "seasonseries",
-   "standings",
-   "wallclockAvailable"
-  ],
-  "h2h_type": "NoneType",
-  "has_lastFiveGames": true,
-  "has_boxscore": true,
-  "has_standings": true,
-  "has_gameInfo": true,
-  "has_odds": true,
-  "lastFive_sample": "[{\"displayOrder\": 1, \"team\": {\"id\": \"1936\", \"uid\": \"s:600~t:1936\", \"displayName\": \"Internacional\", \"abbreviation\": \"INT\", \"links\": [{\"href\": \"https://www.espn.com/soccer/club/_/id/1936/internacional\", \"text\": \"Clubhouse\"}, {\"href\": \"https://www.espn.com/soccer/team/fixtures/_/id/1936/internacional\", \"text\": \"Fixtures\"}], \"logo\": \"https://a.espncdn.com/i/teamlogos/soccer/500/1936.png\", \"logos\": [{\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500/1936.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"default\"], \"lastUpdated\": \"2019-05-08T16:07Z\"}, {\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500-dark/1936.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"dark\"], \"lastUpdated\": \"2019-05-08T16:07Z\"}]}, \"events\": [{\"id\": \"401841255\", \"links\": [{\"href\": \"https"
+ "ita.1:104:Sassuolo": {
+  "2021": {
+   "events": 38,
+   "meetings": [
+    {
+     "date": "2022-02-13T17:00Z",
+     "teams": [
+      "home:Sassuolo=2",
+      "away:AS Roma=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-09-12T18:45Z",
+     "teams": [
+      "home:AS Roma=2",
+      "away:Sassuolo=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    }
+   ]
+  },
+  "2022": {
+   "events": 38,
+   "meetings": [
+    {
+     "date": "2023-03-12T17:00Z",
+     "teams": [
+      "home:AS Roma=3",
+      "away:Sassuolo=4"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-11-09T17:30Z",
+     "teams": [
+      "home:Sassuolo=1",
+      "away:AS Roma=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    }
+   ]
+  },
+  "2023": {
+   "events": 38,
+   "meetings": [
+    {
+     "date": "2024-03-17T17:00Z",
+     "teams": [
+      "home:AS Roma=1",
+      "away:Sassuolo=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-12-03T17:00Z",
+     "teams": [
+      "home:Sassuolo=1",
+      "away:AS Roma=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    }
+   ]
+  },
+  "2024": {
+   "events": 38,
+   "meetings": []
+  },
+  "2025": {
+   "events": 38,
+   "meetings": [
+    {
+     "date": "2026-01-10T17:00Z",
+     "teams": [
+      "home:AS Roma=2",
+      "away:Sassuolo=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-10-26T14:00Z",
+     "teams": [
+      "home:Sassuolo=0",
+      "away:AS Roma=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    }
+   ]
+  }
  },
- "col.1": {
-  "status": 200,
-  "match": "Millonarios v América de Cali",
-  "top_keys": [
-   "boxscore",
-   "broadcasts",
-   "format",
-   "gameInfo",
-   "hasOdds",
-   "header",
-   "lastFiveGames",
-   "leaders",
-   "meta",
-   "news",
-   "odds",
-   "pickcenter",
-   "rosters",
-   "seasonseries",
-   "standings",
-   "wallclockAvailable"
-  ],
-  "h2h_type": "NoneType",
-  "has_lastFiveGames": true,
-  "has_boxscore": true,
-  "has_standings": true,
-  "has_gameInfo": true,
-  "has_odds": true,
-  "lastFive_sample": "[{\"displayOrder\": 1, \"team\": {\"id\": \"5484\", \"uid\": \"s:600~t:5484\", \"displayName\": \"Millonarios\", \"abbreviation\": \"MIL\", \"links\": [{\"href\": \"https://www.espn.com/soccer/club/_/id/5484/millonarios\", \"text\": \"Clubhouse\"}, {\"href\": \"https://www.espn.com/soccer/team/fixtures/_/id/5484/millonarios\", \"text\": \"Fixtures\"}], \"logo\": \"https://a.espncdn.com/i/teamlogos/soccer/500/5484.png\", \"logos\": [{\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500/5484.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"default\"], \"lastUpdated\": \"2023-03-24T19:32Z\"}, {\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500-dark/5484.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"dark\"], \"lastUpdated\": \"2023-03-24T19:33Z\"}]}, \"events\": [{\"id\": \"401877876\", \"links\": [{\"href\": \"https://www"
+ "esp.1:243:Alav": {
+  "2021": {
+   "events": 38,
+   "meetings": [
+    {
+     "date": "2022-03-04T20:00Z",
+     "teams": [
+      "home:Alavés=0",
+      "away:Sevilla=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-11-20T15:15Z",
+     "teams": [
+      "home:Sevilla=2",
+      "away:Alavés=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    }
+   ]
+  },
+  "2022": {
+   "events": 37,
+   "meetings": []
+  },
+  "2023": {
+   "events": 38,
+   "meetings": [
+    {
+     "date": "2024-01-12T20:00Z",
+     "teams": [
+      "home:Sevilla=2",
+      "away:Alavés=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-08-21T17:00Z",
+     "teams": [
+      "home:Alavés=4",
+      "away:Sevilla=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    }
+   ]
+  },
+  "2024": {
+   "events": 38,
+   "meetings": [
+    {
+     "date": "2025-04-20T16:30Z",
+     "teams": [
+      "home:Sevilla=1",
+      "away:Alavés=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-09-20T19:00Z",
+     "teams": [
+      "home:Alavés=2",
+      "away:Sevilla=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    }
+   ]
+  },
+  "2025": {
+   "events": 38,
+   "meetings": [
+    {
+     "date": "2026-02-14T17:30Z",
+     "teams": [
+      "home:Sevilla=1",
+      "away:Alavés=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-09-20T16:30Z",
+     "teams": [
+      "home:Alavés=1",
+      "away:Sevilla=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    }
+   ]
+  }
  },
- "uefa.europa": {
-  "status": 200,
-  "match": "Crystal Palace v TSG Hoffenheim",
-  "top_keys": [
-   "boxscore",
-   "broadcasts",
-   "format",
-   "gameInfo",
-   "hasOdds",
-   "header",
-   "lastFiveGames",
-   "leaders",
-   "meta",
-   "news",
-   "odds",
-   "pickcenter",
-   "rosters",
-   "standings",
-   "wallclockAvailable"
-  ],
-  "h2h_type": "NoneType",
-  "has_lastFiveGames": true,
-  "has_boxscore": true,
-  "has_standings": true,
-  "has_gameInfo": true,
-  "has_odds": true,
-  "lastFive_sample": "[{\"displayOrder\": 1, \"team\": {\"id\": \"384\", \"uid\": \"s:600~t:384\", \"displayName\": \"Crystal Palace\", \"abbreviation\": \"CRY\", \"links\": [{\"href\": \"https://www.espn.com/soccer/club/_/id/384/crystal-palace\", \"text\": \"Clubhouse\"}, {\"href\": \"https://www.espn.com/soccer/team/fixtures/_/id/384/crystal-palace\", \"text\": \"Fixtures\"}], \"logo\": \"https://a.espncdn.com/i/teamlogos/soccer/500/384.png\", \"logos\": [{\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500/384.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"default\"], \"lastUpdated\": \"2019-05-08T16:07Z\"}, {\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500-dark/384.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"dark\"], \"lastUpdated\": \"2019-05-08T16:07Z\"}]}, \"events\": [{\"id\": \"401879261\", \"links\": [{\"href\": \"https://w"
+ "bra.1:1936:Coritiba": {
+  "2021": {
+   "events": 38,
+   "meetings": []
+  },
+  "2022": {
+   "events": 38,
+   "meetings": [
+    {
+     "date": "2022-10-23T21:00Z",
+     "teams": [
+      "home:Coritiba=1",
+      "away:Internacional=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-06-25T00:30Z",
+     "teams": [
+      "home:Internacional=3",
+      "away:Coritiba=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    }
+   ]
+  },
+  "2023": {
+   "events": 38,
+   "meetings": [
+    {
+     "date": "2023-10-29T21:30Z",
+     "teams": [
+      "home:Internacional=3",
+      "away:Coritiba=4"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-06-22T23:00Z",
+     "teams": [
+      "home:Coritiba=0",
+      "away:Internacional=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    }
+   ]
+  },
+  "2024": {
+   "events": 38,
+   "meetings": []
+  },
+  "2025": {
+   "events": 38,
+   "meetings": []
+  }
  },
- "eng.1": {
-  "status": 200,
-  "match": "Everton v Coventry City",
-  "top_keys": [
-   "boxscore",
-   "broadcasts",
-   "format",
-   "gameInfo",
-   "hasOdds",
-   "header",
-   "lastFiveGames",
-   "leaders",
-   "meta",
-   "news",
-   "odds",
-   "pickcenter",
-   "rosters",
-   "seasonseries",
-   "standings",
-   "ticketsInfo",
-   "wallclockAvailable"
-  ],
-  "h2h_type": "NoneType",
-  "has_lastFiveGames": true,
-  "has_boxscore": true,
-  "has_standings": true,
-  "has_gameInfo": true,
-  "has_odds": true,
-  "lastFive_sample": "[{\"displayOrder\": 1, \"team\": {\"id\": \"368\", \"uid\": \"s:600~t:368\", \"displayName\": \"Everton\", \"abbreviation\": \"EVE\", \"links\": [{\"href\": \"https://www.espn.com/soccer/club/_/id/368/everton\", \"text\": \"Clubhouse\"}, {\"href\": \"https://www.espn.com/soccer/team/fixtures/_/id/368/everton\", \"text\": \"Fixtures\"}], \"logo\": \"https://a.espncdn.com/i/teamlogos/soccer/500/368.png\", \"logos\": [{\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500/368.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"default\"], \"lastUpdated\": \"2024-01-04T17:49Z\"}, {\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500-dark/368.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"dark\"], \"lastUpdated\": \"2024-01-04T17:52Z\"}]}, \"events\": [{\"id\": \"401878778\", \"links\": [{\"href\": \"https://www.espn.com/soccer/ma"
+ "tur.1:432:Galatasaray": {
+  "2021": {
+   "events": 38,
+   "meetings": [
+    {
+     "date": "2022-05-20T17:00Z",
+     "teams": [
+      "home:Antalyaspor=1",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-05-16T17:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Adana Demirspor=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-05-07T16:00Z",
+     "teams": [
+      "home:Istanbul Basaksehir=0",
+      "away:Galatasaray=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-05-01T17:30Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Sivasspor=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-04-24T17:30Z",
+     "teams": [
+      "home:Altay Izmir=0",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-04-18T17:30Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Yeni Malatyaspor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-04-10T17:30Z",
+     "teams": [
+      "home:Fenerbahce=2",
+      "away:Galatasaray=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-04-02T17:30Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Fatih Karagümrük=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-03-20T13:00Z",
+     "teams": [
+      "home:Gaziantep FK=3",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-03-14T17:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Besiktas=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-03-05T16:00Z",
+     "teams": [
+      "home:Konyaspor=2",
+      "away:Galatasaray=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-02-27T16:00Z",
+     "teams": [
+      "home:Galatasaray=4",
+      "away:Caykur Rizespor=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-02-21T17:00Z",
+     "teams": [
+      "home:Goztepe=2",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-02-12T16:00Z",
+     "teams": [
+      "home:Galatasaray=1",
+      "away:Kayserispor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-02-06T13:00Z",
+     "teams": [
+      "home:Alanyaspor=1",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-01-23T16:00Z",
+     "teams": [
+      "home:Galatasaray=1",
+      "away:Trabzonspor=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-01-20T17:00Z",
+     "teams": [
+      "home:Galatasaray=1",
+      "away:Kasimpasa=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-01-16T16:00Z",
+     "teams": [
+      "home:Hatayspor=4",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-01-08T16:00Z",
+     "teams": [
+      "home:Galatasaray=0",
+      "away:Giresunspor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-12-25T13:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Antalyaspor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-12-21T17:00Z",
+     "teams": [
+      "home:Adana Demirspor=2",
+      "away:Galatasaray=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-12-18T16:00Z",
+     "teams": [
+      "home:Galatasaray=1",
+      "away:Istanbul Basaksehir=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-12-13T15:00Z",
+     "teams": [
+      "home:Sivasspor=1",
+      "away:Galatasaray=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-12-04T16:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Altay Izmir=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-11-28T16:00Z",
+     "teams": [
+      "home:Yeni Malatyaspor=0",
+      "away:Galatasaray=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-11-21T16:00Z",
+     "teams": [
+      "home:Galatasaray=1",
+      "away:Fenerbahce=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-11-07T13:00Z",
+     "teams": [
+      "home:Fatih Karagümrük=1",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-10-31T16:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Gaziantep FK=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-10-25T17:00Z",
+     "teams": [
+      "home:Besiktas=2",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-10-17T13:00Z",
+     "teams": [
+      "home:Galatasaray=1",
+      "away:Konyaspor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-10-03T16:00Z",
+     "teams": [
+      "home:Caykur Rizespor=2",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-09-26T16:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Goztepe=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-09-22T17:00Z",
+     "teams": [
+      "home:Kayserispor=3",
+      "away:Galatasaray=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-09-19T13:00Z",
+     "teams": [
+      "home:Galatasaray=0",
+      "away:Alanyaspor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-09-12T17:00Z",
+     "teams": [
+      "home:Trabzonspor=2",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-08-29T16:15Z",
+     "teams": [
+      "home:Kasimpasa=2",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-08-23T18:45Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Hatayspor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2021-08-16T18:45Z",
+     "teams": [
+      "home:Giresunspor=0",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    }
+   ]
+  },
+  "2022": {
+   "events": 36,
+   "meetings": [
+    {
+     "date": "2023-06-07T13:00Z",
+     "teams": [
+      "home:Hatayspor=0",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-06-04T16:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Fenerbahce=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-05-30T17:00Z",
+     "teams": [
+      "home:Ankaragucu=1",
+      "away:Galatasaray=4"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-05-20T16:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Sivasspor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-05-16T17:00Z",
+     "teams": [
+      "home:Istanbulspor=0",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-05-08T17:00Z",
+     "teams": [
+      "home:Galatasaray=1",
+      "away:Istanbul Basaksehir=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-04-30T16:00Z",
+     "teams": [
+      "home:Besiktas=3",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-04-23T16:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Fatih Karagümrük=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-04-18T17:30Z",
+     "teams": [
+      "home:Alanyaspor=1",
+      "away:Galatasaray=4"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-04-14T17:30Z",
+     "teams": [
+      "home:Galatasaray=6",
+      "away:Kayserispor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-04-01T17:30Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Adana Demirspor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-03-17T17:00Z",
+     "teams": [
+      "home:Konyaspor=2",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-03-11T16:00Z",
+     "teams": [
+      "home:Galatasaray=1",
+      "away:Kasimpasa=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-03-05T16:00Z",
+     "teams": [
+      "home:Gaziantep FK=0",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-02-05T16:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Trabzonspor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-02-01T17:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Umraniyespor=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-01-28T16:00Z",
+     "teams": [
+      "home:Giresunspor=0",
+      "away:Galatasaray=4"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-01-21T16:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Antalyaspor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-01-13T17:00Z",
+     "teams": [
+      "home:Galatasaray=4",
+      "away:Hatayspor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-01-08T16:00Z",
+     "teams": [
+      "home:Fenerbahce=0",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-01-04T17:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Ankaragucu=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-12-29T14:00Z",
+     "teams": [
+      "home:Sivasspor=1",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-12-25T16:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Istanbulspor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-11-12T17:00Z",
+     "teams": [
+      "home:Istanbul Basaksehir=0",
+      "away:Galatasaray=7"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-11-05T17:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Besiktas=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-10-28T17:00Z",
+     "teams": [
+      "home:Fatih Karagümrük=0",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-10-23T17:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Alanyaspor=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-10-15T17:00Z",
+     "teams": [
+      "home:Kayserispor=2",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-10-01T17:00Z",
+     "teams": [
+      "home:Adana Demirspor=0",
+      "away:Galatasaray=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-09-16T17:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Konyaspor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-09-11T17:00Z",
+     "teams": [
+      "home:Kasimpasa=2",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-09-05T18:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Gaziantep FK=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-08-28T18:45Z",
+     "teams": [
+      "home:Trabzonspor=0",
+      "away:Galatasaray=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-08-19T18:00Z",
+     "teams": [
+      "home:Umraniyespor=0",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-08-13T18:45Z",
+     "teams": [
+      "home:Galatasaray=0",
+      "away:Giresunspor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2022-08-07T18:45Z",
+     "teams": [
+      "home:Antalyaspor=0",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    }
+   ]
+  },
+  "2023": {
+   "events": 38,
+   "meetings": [
+    {
+     "date": "2024-05-26T16:00Z",
+     "teams": [
+      "home:Konyaspor=1",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-05-19T16:00Z",
+     "teams": [
+      "home:Galatasaray=0",
+      "away:Fenerbahce=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-05-12T16:00Z",
+     "teams": [
+      "home:Fatih Karagümrük=2",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-05-05T16:00Z",
+     "teams": [
+      "home:Galatasaray=6",
+      "away:Sivasspor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-04-26T17:00Z",
+     "teams": [
+      "home:Adana Demirspor=0",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-04-21T16:00Z",
+     "teams": [
+      "home:Galatasaray=4",
+      "away:Pendikspor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-04-15T17:00Z",
+     "teams": [
+      "home:Alanyaspor=0",
+      "away:Galatasaray=4"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-04-02T17:30Z",
+     "teams": [
+      "home:Galatasaray=1",
+      "away:Hatayspor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-03-17T13:00Z",
+     "teams": [
+      "home:Kasimpasa=3",
+      "away:Galatasaray=4"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-03-08T17:00Z",
+     "teams": [
+      "home:Galatasaray=6",
+      "away:Caykur Rizespor=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-03-03T16:00Z",
+     "teams": [
+      "home:Besiktas=0",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-02-26T17:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Antalyaspor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-02-18T16:00Z",
+     "teams": [
+      "home:Ankaragucu=0",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-02-10T16:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Istanbul Basaksehir=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-02-02T17:00Z",
+     "teams": [
+      "home:Samsunspor=0",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-01-29T17:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Gaziantep FK=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-01-25T17:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Istanbulspor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-01-21T16:00Z",
+     "teams": [
+      "home:Trabzonspor=1",
+      "away:Galatasaray=5"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-01-15T17:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Kayserispor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-01-11T14:00Z",
+     "teams": [
+      "home:Sivasspor=1",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-01-07T16:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Konyaspor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-12-24T16:00Z",
+     "teams": [
+      "home:Fenerbahce=0",
+      "away:Galatasaray=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-12-20T17:00Z",
+     "teams": [
+      "home:Galatasaray=1",
+      "away:Fatih Karagümrük=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-12-08T17:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Adana Demirspor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-12-02T16:00Z",
+     "teams": [
+      "home:Pendikspor=0",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-11-25T16:00Z",
+     "teams": [
+      "home:Galatasaray=4",
+      "away:Alanyaspor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-11-11T16:00Z",
+     "teams": [
+      "home:Hatayspor=2",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-11-03T17:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Kasimpasa=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-10-28T16:00Z",
+     "teams": [
+      "home:Caykur Rizespor=0",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-10-21T16:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Besiktas=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-10-07T16:00Z",
+     "teams": [
+      "home:Antalyaspor=0",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-09-30T16:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Ankaragucu=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-09-26T17:00Z",
+     "teams": [
+      "home:Istanbulspor=0",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-09-23T17:00Z",
+     "teams": [
+      "home:Istanbul Basaksehir=1",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-09-16T17:00Z",
+     "teams": [
+      "home:Galatasaray=4",
+      "away:Samsunspor=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-09-02T18:45Z",
+     "teams": [
+      "home:Gaziantep FK=0",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-08-19T18:45Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Trabzonspor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2023-08-12T18:45Z",
+     "teams": [
+      "home:Kayserispor=0",
+      "away:Galatasaray=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    }
+   ]
+  },
+  "2024": {
+   "events": 36,
+   "meetings": [
+    {
+     "date": "2025-05-30T17:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Istanbul Basaksehir=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-05-24T16:00Z",
+     "teams": [
+      "home:Goztepe=0",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-05-18T16:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Kayserispor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-05-10T16:00Z",
+     "teams": [
+      "home:Trabzonspor=0",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-05-03T16:00Z",
+     "teams": [
+      "home:Galatasaray=4",
+      "away:Sivasspor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-04-27T16:00Z",
+     "teams": [
+      "home:Eyupspor=1",
+      "away:Galatasaray=5"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-04-18T17:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Bodrum FK=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-04-11T17:00Z",
+     "teams": [
+      "home:Samsunspor=0",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-03-29T17:30Z",
+     "teams": [
+      "home:Besiktas=2",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-03-14T17:30Z",
+     "teams": [
+      "home:Galatasaray=4",
+      "away:Antalyaspor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-03-09T17:30Z",
+     "teams": [
+      "home:Alanyaspor=1",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-03-02T13:00Z",
+     "teams": [
+      "home:Kasimpasa=3",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-02-24T17:00Z",
+     "teams": [
+      "home:Galatasaray=0",
+      "away:Fenerbahce=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-02-17T17:00Z",
+     "teams": [
+      "home:Caykur Rizespor=1",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-02-09T16:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Adana Demirspor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-02-03T17:00Z",
+     "teams": [
+      "home:Gaziantep FK=0",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-01-25T16:00Z",
+     "teams": [
+      "home:Galatasaray=1",
+      "away:Konyaspor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-01-17T17:00Z",
+     "teams": [
+      "home:Hatayspor=1",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-01-12T16:00Z",
+     "teams": [
+      "home:Istanbul Basaksehir=1",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-01-04T16:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Goztepe=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-12-22T13:00Z",
+     "teams": [
+      "home:Kayserispor=1",
+      "away:Galatasaray=5"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-12-16T18:00Z",
+     "teams": [
+      "home:Galatasaray=4",
+      "away:Trabzonspor=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-12-08T13:00Z",
+     "teams": [
+      "home:Sivasspor=2",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-12-01T16:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Eyupspor=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-11-23T16:00Z",
+     "teams": [
+      "home:Bodrum FK=0",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-11-10T13:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Samsunspor=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-10-28T17:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Besiktas=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-10-19T16:00Z",
+     "teams": [
+      "home:Antalyaspor=0",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-10-06T16:00Z",
+     "teams": [
+      "home:Galatasaray=1",
+      "away:Alanyaspor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-09-28T16:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Kasimpasa=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-09-21T17:00Z",
+     "teams": [
+      "home:Fenerbahce=1",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-09-17T17:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Gaziantep FK=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-09-14T17:00Z",
+     "teams": [
+      "home:Galatasaray=5",
+      "away:Caykur Rizespor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-08-31T18:45Z",
+     "teams": [
+      "home:Adana Demirspor=1",
+      "away:Galatasaray=5"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-08-16T18:00Z",
+     "teams": [
+      "home:Konyaspor=1",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2024-08-09T18:00Z",
+     "teams": [
+      "home:Galatasaray=2",
+      "away:Hatayspor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    }
+   ]
+  },
+  "2025": {
+   "events": 34,
+   "meetings": [
+    {
+     "date": "2026-05-17T17:00Z",
+     "teams": [
+      "home:Kasimpasa=1",
+      "away:Galatasaray=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2026-05-09T17:00Z",
+     "teams": [
+      "home:Galatasaray=4",
+      "away:Antalyaspor=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2026-05-02T17:00Z",
+     "teams": [
+      "home:Samsunspor=4",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2026-04-26T17:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Fenerbahce=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2026-04-18T17:00Z",
+     "teams": [
+      "home:Genclerbirligi=1",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2026-04-12T17:00Z",
+     "teams": [
+      "home:Galatasaray=1",
+      "away:Kocaelispor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2026-04-08T17:00Z",
+     "teams": [
+      "home:Goztepe=1",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2026-04-04T17:00Z",
+     "teams": [
+      "home:Trabzonspor=2",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2026-03-14T17:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Istanbul Basaksehir=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2026-03-07T17:00Z",
+     "teams": [
+      "home:Besiktas=0",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2026-02-28T17:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Alanyaspor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2026-02-21T17:00Z",
+     "teams": [
+      "home:Konyaspor=2",
+      "away:Galatasaray=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2026-02-13T17:00Z",
+     "teams": [
+      "home:Galatasaray=5",
+      "away:Eyupspor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2026-02-08T14:00Z",
+     "teams": [
+      "home:Caykur Rizespor=0",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2026-02-01T17:00Z",
+     "teams": [
+      "home:Galatasaray=4",
+      "away:Kayserispor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2026-01-24T17:00Z",
+     "teams": [
+      "home:Fatih Karagümrük=1",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2026-01-17T17:00Z",
+     "teams": [
+      "home:Galatasaray=1",
+      "away:Gaziantep FK=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-12-21T17:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Kasimpasa=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-12-13T17:00Z",
+     "teams": [
+      "home:Antalyaspor=1",
+      "away:Galatasaray=4"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-12-05T17:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Samsunspor=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-12-01T17:00Z",
+     "teams": [
+      "home:Fenerbahce=1",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-11-22T17:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Genclerbirligi=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-11-09T14:00Z",
+     "teams": [
+      "home:Kocaelispor=1",
+      "away:Galatasaray=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-11-01T17:00Z",
+     "teams": [
+      "home:Galatasaray=0",
+      "away:Trabzonspor=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-10-26T14:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Goztepe=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-10-18T17:00Z",
+     "teams": [
+      "home:Istanbul Basaksehir=1",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-10-04T17:00Z",
+     "teams": [
+      "home:Galatasaray=1",
+      "away:Besiktas=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-09-26T17:00Z",
+     "teams": [
+      "home:Alanyaspor=0",
+      "away:Galatasaray=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-09-22T17:00Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Konyaspor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-09-13T14:00Z",
+     "teams": [
+      "home:Eyupspor=0",
+      "away:Galatasaray=2"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-08-30T18:30Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Caykur Rizespor=1"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-08-24T18:30Z",
+     "teams": [
+      "home:Kayserispor=0",
+      "away:Galatasaray=4"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-08-15T18:30Z",
+     "teams": [
+      "home:Galatasaray=3",
+      "away:Fatih Karagümrük=0"
+     ],
+     "status": "STATUS_FULL_TIME"
+    },
+    {
+     "date": "2025-08-08T18:30Z",
+     "teams": [
+      "home:Gaziantep FK=0",
+      "away:Galatasaray=3"
+     ],
+     "status": "STATUS_FULL_TIME"
+    }
+   ]
+  }
  },
- "esp.1": {
-  "status": 200,
-  "match": "Sevilla v Alavés",
-  "top_keys": [
-   "boxscore",
-   "broadcasts",
-   "format",
-   "gameInfo",
-   "hasOdds",
-   "header",
-   "lastFiveGames",
-   "leaders",
-   "meta",
-   "news",
-   "odds",
-   "pickcenter",
-   "rosters",
-   "seasonseries",
-   "standings",
-   "wallclockAvailable"
-  ],
-  "h2h_type": "NoneType",
-  "has_lastFiveGames": true,
-  "has_boxscore": true,
-  "has_standings": true,
-  "has_gameInfo": true,
-  "has_odds": true,
-  "lastFive_sample": "[{\"displayOrder\": 1, \"team\": {\"id\": \"243\", \"uid\": \"s:600~t:243\", \"displayName\": \"Sevilla\", \"abbreviation\": \"SEV\", \"links\": [{\"href\": \"https://www.espn.com/soccer/club/_/id/243/sevilla\", \"text\": \"Clubhouse\"}, {\"href\": \"https://www.espn.com/soccer/team/fixtures/_/id/243/sevilla\", \"text\": \"Fixtures\"}], \"logo\": \"https://a.espncdn.com/i/teamlogos/soccer/500/243.png\", \"logos\": [{\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500/243.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"default\"], \"lastUpdated\": \"2019-05-08T16:07Z\"}, {\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500-dark/243.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"dark\"], \"lastUpdated\": \"2019-05-08T16:07Z\"}]}, \"events\": [{\"id\": \"401882852\", \"links\": [{\"href\": \"https://www.espn.com/soccer/ma"
+ "fifa.friendly:164:Chile": {
+  "2021": {
+   "events": 2,
+   "meetings": []
+  },
+  "2022": {
+   "events": 3,
+   "meetings": []
+  },
+  "2023": {
+   "events": 0,
+   "meetings": []
+  },
+  "2024": {
+   "events": 4,
+   "meetings": []
+  },
+  "2025": {
+   "events": 0,
+   "meetings": []
+  }
  },
- "tur.1": {
-  "status": 200,
-  "match": "Samsunspor v Konyaspor",
-  "top_keys": [
-   "boxscore",
-   "broadcasts",
-   "format",
-   "gameInfo",
-   "hasOdds",
-   "header",
-   "lastFiveGames",
-   "leaders",
-   "meta",
-   "news",
-   "pickcenter",
-   "rosters",
-   "seasonseries",
-   "standings",
-   "wallclockAvailable"
-  ],
-  "h2h_type": "NoneType",
-  "has_lastFiveGames": true,
-  "has_boxscore": true,
-  "has_standings": true,
-  "has_gameInfo": true,
-  "lastFive_sample": "[{\"displayOrder\": 1, \"team\": {\"id\": \"11429\", \"uid\": \"s:600~t:11429\", \"displayName\": \"Samsunspor\", \"abbreviation\": \"SAM\", \"links\": [{\"href\": \"https://www.espn.com/soccer/club/_/id/11429/samsunspor\", \"text\": \"Clubhouse\"}, {\"href\": \"https://www.espn.com/soccer/team/fixtures/_/id/11429/samsunspor\", \"text\": \"Fixtures\"}], \"logo\": \"https://a.espncdn.com/i/teamlogos/soccer/500/11429.png\", \"logos\": [{\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500/11429.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"default\"], \"lastUpdated\": \"2023-09-15T18:47Z\"}, {\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500-dark/11429.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"dark\"], \"lastUpdated\": \"2023-09-15T18:53Z\"}]}, \"events\": [{\"id\": \"401888285\", \"links\": [{\"href\": \"https:/"
- },
- "ita.1": {
-  "status": 200,
-  "match": "AS Roma v Sassuolo",
-  "top_keys": [
-   "boxscore",
-   "broadcasts",
-   "format",
-   "gameInfo",
-   "hasOdds",
-   "header",
-   "lastFiveGames",
-   "leaders",
-   "meta",
-   "news",
-   "odds",
-   "pickcenter",
-   "rosters",
-   "seasonseries",
-   "standings",
-   "wallclockAvailable"
-  ],
-  "h2h_type": "NoneType",
-  "has_lastFiveGames": true,
-  "has_boxscore": true,
-  "has_standings": true,
-  "has_gameInfo": true,
-  "has_odds": true,
-  "lastFive_sample": "[{\"displayOrder\": 1, \"team\": {\"id\": \"104\", \"uid\": \"s:600~t:104\", \"displayName\": \"AS Roma\", \"abbreviation\": \"ROMA\", \"links\": [{\"href\": \"https://www.espn.com/soccer/club/_/id/104/as-roma\", \"text\": \"Clubhouse\"}, {\"href\": \"https://www.espn.com/soccer/team/fixtures/_/id/104/as-roma\", \"text\": \"Fixtures\"}], \"logo\": \"https://a.espncdn.com/i/teamlogos/soccer/500/104.png\", \"logos\": [{\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500/104.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"default\"], \"lastUpdated\": \"2024-01-04T17:49Z\"}, {\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500-dark/104.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"dark\"], \"lastUpdated\": \"2024-01-04T17:53Z\"}]}, \"events\": [{\"id\": \"401874935\", \"links\": [{\"href\": \"https://www.espn.com/soccer/m"
- },
- "caf.nations_qual": {
-  "status": 200,
-  "match": "South Africa v Kenya",
-  "top_keys": [
-   "boxscore",
-   "broadcasts",
-   "format",
-   "gameInfo",
-   "hasOdds",
-   "header",
-   "lastFiveGames",
-   "leaders",
-   "meta",
-   "news",
-   "pickcenter",
-   "rosters",
-   "standings",
-   "wallclockAvailable"
-  ],
-  "h2h_type": "NoneType",
-  "has_lastFiveGames": true,
-  "has_boxscore": true,
-  "has_standings": true,
-  "has_gameInfo": true,
-  "lastFive_sample": "[{\"displayOrder\": 1, \"team\": {\"id\": \"467\", \"uid\": \"s:600~t:467\", \"displayName\": \"South Africa\", \"abbreviation\": \"RSA\", \"links\": [{\"href\": \"https://www.espn.com/soccer/team/_/id/467/south-africa\", \"text\": \"Clubhouse\"}, {\"href\": \"https://www.espn.com/soccer/team/fixtures/_/id/467/south-africa\", \"text\": \"Fixtures\"}], \"logo\": \"https://a.espncdn.com/i/teamlogos/countries/500/rsa.png\", \"logos\": [{\"href\": \"https://a.espncdn.com/i/teamlogos/countries/500/rsa.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"default\"], \"lastUpdated\": \"2023-10-25T16:21Z\"}, {\"href\": \"https://a.espncdn.com/i/teamlogos/countries/500-dark/rsa.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"dark\"], \"lastUpdated\": \"2023-10-25T16:21Z\"}]}, \"events\": [{\"id\": \"760466\", \"links\": [{\"href\": \"https://w"
- },
- "fifa.friendly": {
-  "status": 200,
-  "match": "Spain v Chile",
-  "top_keys": [
-   "boxscore",
-   "broadcasts",
-   "format",
-   "gameInfo",
-   "hasOdds",
-   "header",
-   "lastFiveGames",
-   "leaders",
-   "meta",
-   "news",
-   "pickcenter",
-   "rosters",
-   "seasonseries",
-   "standings",
-   "wallclockAvailable"
-  ],
-  "h2h_type": "NoneType",
-  "has_lastFiveGames": true,
-  "has_boxscore": true,
-  "has_standings": true,
-  "has_gameInfo": true,
-  "lastFive_sample": "[{\"displayOrder\": 1, \"team\": {\"id\": \"164\", \"uid\": \"s:600~t:164\", \"displayName\": \"Spain\", \"abbreviation\": \"ESP\", \"links\": [{\"href\": \"https://www.espn.com/soccer/team/_/id/164/spain\", \"text\": \"Clubhouse\"}, {\"href\": \"https://www.espn.com/soccer/team/fixtures/_/id/164/spain\", \"text\": \"Fixtures\"}], \"logo\": \"https://a.espncdn.com/i/teamlogos/countries/500/esp.png\", \"logos\": [{\"href\": \"https://a.espncdn.com/i/teamlogos/countries/500/esp.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"default\"], \"lastUpdated\": \"2023-11-13T17:38Z\"}, {\"href\": \"https://a.espncdn.com/i/teamlogos/countries/500-dark/esp.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"dark\"], \"lastUpdated\": \"2023-11-13T17:39Z\"}]}, \"events\": [{\"id\": \"760517\", \"links\": [{\"href\": \"https://www.espn.com/soccer/ma"
- },
- "conmebol.libertadores": {
-  "status": 200,
-  "match": "Palmeiras v Estudiantes de La Plata",
-  "top_keys": [
-   "boxscore",
-   "broadcasts",
-   "format",
-   "gameInfo",
-   "hasOdds",
-   "header",
-   "lastFiveGames",
-   "leaders",
-   "meta",
-   "news",
-   "pickcenter",
-   "rosters",
-   "standings",
-   "wallclockAvailable"
-  ],
-  "h2h_type": "NoneType",
-  "has_lastFiveGames": true,
-  "has_boxscore": true,
-  "has_standings": true,
-  "has_gameInfo": true,
-  "lastFive_sample": "[{\"displayOrder\": 1, \"team\": {\"id\": \"2029\", \"uid\": \"s:600~t:2029\", \"displayName\": \"Palmeiras\", \"abbreviation\": \"PAL\", \"links\": [{\"href\": \"https://www.espn.com/soccer/club/_/id/2029/palmeiras\", \"text\": \"Clubhouse\"}, {\"href\": \"https://www.espn.com/soccer/team/fixtures/_/id/2029/palmeiras\", \"text\": \"Fixtures\"}], \"logo\": \"https://a.espncdn.com/i/teamlogos/soccer/500/2029.png\", \"logos\": [{\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500/2029.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"default\"], \"lastUpdated\": \"2019-05-08T16:07Z\"}, {\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500-dark/2029.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"dark\"], \"lastUpdated\": \"2019-05-08T16:07Z\"}]}, \"events\": [{\"id\": \"401841271\", \"links\": [{\"href\": \"https://www.espn."
- },
- "ita.coppa_italia": {
-  "status": 200,
-  "match": "Internazionale v Genoa",
-  "top_keys": [
-   "boxscore",
-   "broadcasts",
-   "format",
-   "gameInfo",
-   "hasOdds",
-   "header",
-   "lastFiveGames",
-   "leaders",
-   "meta",
-   "news",
-   "pickcenter",
-   "rosters",
-   "seasonseries",
-   "standings",
-   "wallclockAvailable"
-  ],
-  "h2h_type": "NoneType",
-  "has_lastFiveGames": true,
-  "has_boxscore": true,
-  "has_standings": true,
-  "has_gameInfo": true,
-  "lastFive_sample": "[{\"displayOrder\": 1, \"team\": {\"id\": \"110\", \"uid\": \"s:600~t:110\", \"displayName\": \"Internazionale\", \"abbreviation\": \"INT\", \"links\": [{\"href\": \"https://www.espn.com/soccer/club/_/id/110/internazionale\", \"text\": \"Clubhouse\"}, {\"href\": \"https://www.espn.com/soccer/team/fixtures/_/id/110/internazionale\", \"text\": \"Fixtures\"}], \"logo\": \"https://a.espncdn.com/i/teamlogos/soccer/500/110.png\", \"logos\": [{\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500/110.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"default\"], \"lastUpdated\": \"2024-01-04T17:49Z\"}, {\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500-dark/110.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"dark\"], \"lastUpdated\": \"2024-01-04T17:53Z\"}]}, \"events\": [{\"id\": \"401874953\", \"links\": [{\"href\": \"https://w"
- },
- "eng.league_cup": {
-  "status": 200,
-  "match": "Crystal Palace v Sunderland",
-  "top_keys": [
-   "boxscore",
-   "broadcasts",
-   "format",
-   "gameInfo",
-   "hasOdds",
-   "header",
-   "lastFiveGames",
-   "leaders",
-   "meta",
-   "news",
-   "pickcenter",
-   "rosters",
-   "seasonseries",
-   "standings",
-   "wallclockAvailable"
-  ],
-  "h2h_type": "NoneType",
-  "has_lastFiveGames": true,
-  "has_boxscore": true,
-  "has_standings": true,
-  "has_gameInfo": true,
-  "lastFive_sample": "[{\"displayOrder\": 1, \"team\": {\"id\": \"384\", \"uid\": \"s:600~t:384\", \"displayName\": \"Crystal Palace\", \"abbreviation\": \"CRY\", \"links\": [{\"href\": \"https://www.espn.com/soccer/club/_/id/384/crystal-palace\", \"text\": \"Clubhouse\"}, {\"href\": \"https://www.espn.com/soccer/team/fixtures/_/id/384/crystal-palace\", \"text\": \"Fixtures\"}], \"logo\": \"https://a.espncdn.com/i/teamlogos/soccer/500/384.png\", \"logos\": [{\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500/384.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"default\"], \"lastUpdated\": \"2019-05-08T16:07Z\"}, {\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500-dark/384.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"dark\"], \"lastUpdated\": \"2019-05-08T16:07Z\"}]}, \"events\": [{\"id\": \"401879261\", \"links\": [{\"href\": \"https://w"
- },
- "ned.cup": {
-  "status": 200,
-  "match": "Fortuna Sittard v FC Twente",
-  "top_keys": [
-   "boxscore",
-   "broadcasts",
-   "format",
-   "gameInfo",
-   "hasOdds",
-   "header",
-   "lastFiveGames",
-   "leaders",
-   "meta",
-   "news",
-   "pickcenter",
-   "rosters",
-   "seasonseries",
-   "standings",
-   "wallclockAvailable"
-  ],
-  "h2h_type": "NoneType",
-  "has_lastFiveGames": true,
-  "has_boxscore": true,
-  "has_standings": true,
-  "has_gameInfo": true,
-  "lastFive_sample": "[{\"displayOrder\": 1, \"team\": {\"id\": \"143\", \"uid\": \"s:600~t:143\", \"displayName\": \"Fortuna Sittard\", \"abbreviation\": \"FOR\", \"links\": [{\"href\": \"https://www.espn.com/soccer/club/_/id/143/fortuna-sittard\", \"text\": \"Clubhouse\"}, {\"href\": \"https://www.espn.com/soccer/team/fixtures/_/id/143/fortuna-sittard\", \"text\": \"Fixtures\"}], \"logo\": \"https://a.espncdn.com/i/teamlogos/soccer/500/143.png\", \"logos\": [{\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500/143.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"default\"], \"lastUpdated\": \"2019-05-08T16:07Z\"}, {\"href\": \"https://a.espncdn.com/i/teamlogos/soccer/500-dark/143.png\", \"width\": 500, \"height\": 500, \"alt\": \"\", \"rel\": [\"full\", \"dark\"], \"lastUpdated\": \"2019-05-08T16:07Z\"}]}, \"events\": [{\"id\": \"401875588\", \"links\": [{\"href\": \"https:"
+ "uefa.champions:432:Stuttgart": {
+  "2021": {
+   "events": 0,
+   "meetings": []
+  },
+  "2022": {
+   "events": 0,
+   "meetings": []
+  },
+  "2023": {
+   "events": 6,
+   "meetings": []
+  },
+  "2024": {
+   "events": 0,
+   "meetings": []
+  },
+  "2025": {
+   "events": 12,
+   "meetings": []
+  }
  }
 }
