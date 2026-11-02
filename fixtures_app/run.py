@@ -10,7 +10,7 @@ import re
 import sys
 from datetime import datetime, timedelta, timezone
 
-from . import excel, slack, state
+from . import excel, history, slack, state
 from .collect import collect, load_partners
 from .espn import ESPN
 from .tsdb import TheSportsDB
@@ -19,6 +19,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PARTNERS = os.path.join(ROOT, "config", "partners.csv")
 STATE = os.path.join(ROOT, "data", "fixtures.json")
 IDS = os.path.join(ROOT, "data", "team_ids.json")
+HISTORY = os.path.join(ROOT, "data", "history.json")
 EXCEL = os.path.join(ROOT, "output", "fixtures.xlsx")
 
 log = logging.getLogger("fixtures")
@@ -119,7 +120,18 @@ def main(argv=None, espn: ESPN | None = None, now: datetime | None = None,
     state.save(STATE, new_state)
     state.save(IDS, id_cache)
     os.makedirs(os.path.dirname(EXCEL), exist_ok=True)
-    counts = excel.write(EXCEL, new_state, added, changed, coverage, now)
+    # Head-to-head from past seasons. Never lets a problem here stop the fixture update.
+    h2h = {}
+    try:
+        hist = history.load(HISTORY)
+        history.update(hist, partners, id_cache, espn, now.date())
+        history.save(HISTORY, hist)
+        ids = {p.name: (p.espn_id or id_cache.get(p.name) or "") for p in partners}
+        h2h = {k: history.for_fixture(hist, rec, now.date(), ids.get(rec.get("partner"), ""))
+               for k, rec in new_state.items()}
+    except Exception:
+        log.exception("Head-to-head failed; the Excel file is written without it this time")
+    counts = excel.write(EXCEL, new_state, added, changed, coverage, now, h2h)
     log.info("New: %d, changed: %d, upcoming: %d, past: %d", len(added), len(changed),
              counts["upcoming"], counts["past"])
 

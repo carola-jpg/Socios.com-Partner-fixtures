@@ -120,6 +120,7 @@ def main():
     run.PARTNERS = partners_csv
     run.STATE = os.path.join(tmp, "data", "fixtures.json")
     run.IDS = os.path.join(tmp, "data", "team_ids.json")
+    run.HISTORY = os.path.join(tmp, "data", "history.json")
     run.EXCEL = os.path.join(tmp, "output", "fixtures.xlsx")
     os.environ["EXCEL_URL"] = "https://example.com/fixtures.xlsx"
 
@@ -206,6 +207,53 @@ def test_alert_rules():
     assert [r["change_note"] for r in moved] == ["Kick-off time changed", "Date changed", "Status: Postponed"]
 
 
+def test_head_to_head():
+    from datetime import date
+    from fixtures_app import history
+
+    def ev(eid, day, hid, hname, hs, aid, aname, as_, pens=None):
+        comp = {"date": day + "T19:45Z", "status": {"type": {"completed": True}}, "competitors": [
+            {"homeAway": "home", "team": {"id": hid, "displayName": hname}, "score": {"value": hs, "displayValue": str(hs)},
+             **({"shootoutScore": pens[0]} if pens else {})},
+            {"homeAway": "away", "team": {"id": aid, "displayName": aname}, "score": {"value": as_, "displayValue": str(as_)},
+             **({"shootoutScore": pens[1]} if pens else {})}]}
+        return {"id": eid, "date": comp["date"], "league": {"name": "Italian Serie A"}, "competitions": [comp]}
+
+    sched = {"events": [
+        ev("1", "2025-10-26", "2", "Sassuolo", 0, "1", "AS Roma", 1),
+        ev("2", "2026-01-10", "1", "AS Roma", 2, "2", "Sassuolo", 0),
+        ev("3", "2023-03-12", "1", "AS Roma", 3, "2", "Sassuolo", 4),
+        ev("4", "2024-01-20", "1", "AS Roma", 1, "2", "Sassuolo", 1, pens=(4, 3)),
+        ev("5", "2024-02-01", "1", "AS Roma", 1, "3", "Napoli", 1),
+        {"id": "6", "competitions": [{"status": {"type": {"completed": False}}, "competitors": []}]},
+    ]}
+
+    class FakeESPN:
+        def get(self, url):
+            if "season=2025" in url and "ita.1" in url:
+                return sched
+            return {"events": []}
+
+    class P:
+        name, espn_id, competitions = "AS Roma", "1", ["ita.1", "tsdb:1"]
+
+    data = {"games": {}, "done": []}
+    history.update(data, [P()], {}, FakeESPN(), date(2026, 11, 2))
+    assert len(data["games"]) == 5, data["games"]
+    assert "ita.1|1|2016" in data["done"] and "ita.1|1|2026" not in data["done"]  # current season refetched
+    fx = {"event_id": "99", "partner": "AS Roma", "home_id": "1", "away_id": "2", "side": "Home",
+          "date_utc": "2026-11-29T14:00Z"}
+    info = history.for_fixture(data, fx, date(2026, 11, 2), "1")
+    assert info["last5"] == "W2 D1 L1", info
+    assert info["last"] == "10/01/2026 AS Roma 2-0 Sassuolo", info
+    assert any("(4-3 pens)" in m["score"] for m in info["list"]), info["list"]
+    away = dict(fx, home_id="2", away_id="1", side="Away")
+    assert history.for_fixture(data, away, date(2026, 11, 2), "1")["last5"] == "W2 D1 L1"
+    none = dict(fx, away_id="77")
+    assert history.for_fixture(data, none, date(2026, 11, 2), "1")["last5"] == "No meetings since 2016"
+    assert history.for_fixture(data, dict(fx, event_id="tsdb5"), date(2026, 11, 2), "1")["last5"].startswith("No data")
+
+
 def test_alert_window():
     now = datetime(2026, 11, 2, 7, tzinfo=timezone.utc)
     assert not run.far_enough({"date_utc": "2026-11-04T19:45Z"}, now, 5)   # 2 days away
@@ -217,4 +265,5 @@ def test_alert_window():
 if __name__ == "__main__":
     test_alert_window()
     test_alert_rules()
+    test_head_to_head()
     main()

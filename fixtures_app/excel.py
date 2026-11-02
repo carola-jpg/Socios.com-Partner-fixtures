@@ -24,6 +24,7 @@ FIXTURE_COLS = [
     ("Kick-off (UTC)", 18), ("Time status", 12), ("Partner", 28),
     ("Competition", 28), ("Round", 18), ("Fixture", 42), ("Home/Away", 11), ("Stadium", 30),
     ("City", 16), ("Country", 14), ("Added", 12), ("Last change", 30),
+    ("H2H last 5", 16), ("H2H since 2016", 22), ("Last meeting", 46),
 ]
 
 
@@ -37,7 +38,7 @@ def uk_dt(iso: str) -> datetime | None:
     return dt.astimezone(UK)
 
 
-def _fixture_row(r: dict, with_change: bool = True) -> list:
+def _fixture_row(r: dict, with_change: bool = True, h2h: dict | None = None) -> list:
     loc, utc, zone = local_and_utc(r)
     day = loc or utc  # the local date where known, otherwise the UTC date
     timed = bool(utc and r.get("time_confirmed"))
@@ -64,6 +65,9 @@ def _fixture_row(r: dict, with_change: bool = True) -> list:
         r.get("country", ""),
         added.date() if added else None,
         r.get("change_note", "") if with_change else "",
+        (h2h or {}).get("last5", ""),
+        (h2h or {}).get("all", ""),
+        (h2h or {}).get("last", ""),
     ]
 
 
@@ -96,7 +100,13 @@ def _sort_key(r):
     return (r.get("date_utc") or "9999", r.get("partner", ""))
 
 
-def write(path: str, state: dict, run_new: list[dict], run_changed: list[dict], coverage: list[dict], run_time: datetime):
+def write(path: str, state: dict, run_new: list[dict], run_changed: list[dict], coverage: list[dict],
+          run_time: datetime, h2h: dict | None = None):
+    h2h = h2h or {}
+
+    def hk(r):
+        return h2h.get(f"{r.get('event_id')}|{r.get('partner')}")
+
     today = run_time.astimezone(UK).date()
     records = sorted(state.values(), key=_sort_key)
     upcoming, past = [], []
@@ -120,7 +130,12 @@ def write(path: str, state: dict, run_new: list[dict], run_changed: list[dict], 
         ("New & changed: everything new or changed since the previous run. Slack only gets new cup, European and international fixtures, and date or kick-off changes, for matches at least 5 days away.", False),
         ("By partner: how many upcoming fixtures each partner has and when the next one is.", False),
         ("Coverage: which competitions were checked for each partner and what was found.", False),
+        ("Head-to-head: previous meetings (since 2016-17, newest first) for every upcoming fixture.", False),
         ("Past: fixtures whose date has gone by.", False),
+        ("", False),
+        ("H2H columns are from our partner's point of view: W = partner won, D = draw, L = partner lost. "
+         "They cover all competitions on ESPN since the 2016-17 season. League matches from TheSportsDB "
+         "(Poland, Croatia, Switzerland, Indonesia, Cyprus) have no head-to-head.", False),
         ("", False),
         ("Kick-off 'TBC' means the date is announced but the league hasn't fixed the time yet.", False),
         ("Kick-off times are shown in the stadium's local time (with its UTC offset) and in UTC. "
@@ -135,10 +150,10 @@ def write(path: str, state: dict, run_new: list[dict], run_changed: list[dict], 
              CHANGED_FILL if (r["event_id"], r["partner"]) in changed_keys else
              WARN_FILL if r.get("change_note", "").startswith("Not in latest feed") else None
              for r in upcoming]
-    _sheet(wb, "Upcoming", FIXTURE_COLS, [_fixture_row(r) for r in upcoming], fills)
+    _sheet(wb, "Upcoming", FIXTURE_COLS, [_fixture_row(r, h2h=hk(r)) for r in upcoming], fills)
 
     run_rows = sorted(run_new + run_changed, key=_sort_key)
-    ws_nc = _sheet(wb, "New & changed", FIXTURE_COLS, [_fixture_row(r) for r in run_rows],
+    ws_nc = _sheet(wb, "New & changed", FIXTURE_COLS, [_fixture_row(r, h2h=hk(r)) for r in run_rows],
                    [NEW_FILL if r.get("change_note") == "New" else CHANGED_FILL for r in run_rows])
     if not run_rows:
         ws_nc["A2"] = "No new or changed fixtures since the previous run."
@@ -165,6 +180,22 @@ def write(path: str, state: dict, run_new: list[dict], run_changed: list[dict], 
                  for c in coverage]
     _sheet(wb, "Coverage", [("Partner", 30), ("Competition", 34), ("Source code", 22), ("Result", 70)],
            cov_rows, cov_fills)
+
+    # Head-to-head: previous meetings for each upcoming fixture
+    h_rows = []
+    for r in upcoming:
+        info = hk(r) or {}
+        dt = uk_dt(r.get("date_utc", ""))
+        for m in info.get("list", []):
+            h_rows.append([dt.date() if dt else None, r.get("partner", ""),
+                           f"{r.get('home', '')} v {r.get('away', '')}",
+                           datetime.fromisoformat(m["date"]).date(), m["competition"], m["score"], m["result"]])
+    ws_h = _sheet(wb, "Head-to-head", [("Upcoming date", 14), ("Partner", 28), ("Upcoming fixture", 42),
+                                       ("Meeting date", 14), ("Competition", 30), ("Result", 52),
+                                       ("Partner W/D/L", 13)], h_rows)
+    if not h_rows:
+        ws_h["A2"] = "No head-to-head data yet."
+        ws_h["A2"].font = Font(name=FONT, italic=True, color="808080")
 
     _sheet(wb, "Past", FIXTURE_COLS, [_fixture_row(r, False) for r in reversed(past)])
     wb.save(path)

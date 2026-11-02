@@ -65,6 +65,7 @@ winter, 07:43 in summer). GitHub sometimes starts scheduled runs a little late. 
 | Upcoming | Every announced fixture, earliest first, with kick-off in local time and UTC. Green = new this run, yellow = changed, orange = no longer in the feed (check it) |
 | New & changed | Everything new or changed in the latest run. Slack only gets new cup/European/international fixtures and date or time changes, for matches 5+ days away |
 | By partner | Number of upcoming fixtures and the next match for each partner |
+| Head-to-head | Previous meetings (since 2016-17) for every upcoming fixture. The Upcoming sheet also has *H2H last 5*, *H2H since 2016* and *Last meeting* columns, from the partner's point of view |
 | Coverage | Which competitions were checked for each partner and what was found |
 | Past | Fixtures whose date has passed |
 
