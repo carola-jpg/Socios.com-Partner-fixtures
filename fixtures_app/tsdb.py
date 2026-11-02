@@ -24,6 +24,7 @@ from .espn import NotAvailable
 log = logging.getLogger(__name__)
 BASE = "https://www.thesportsdb.com/api/v1/json/{key}"
 LOOKBACK_ROUNDS = 3  # catches matches from recent rounds that were moved
+AHEAD_ROUNDS = 10    # rounds fetched beyond the latest played one (later rounds are kept from earlier runs)
 FINISHED = ("finished", "ft", "aet", "pen", "after")
 
 
@@ -74,6 +75,7 @@ class TheSportsDB:
         self._cache: dict[str, list[dict]] = {}
         self._name: dict[str, str | None] = {}
         self._failed: dict[str, str] = {}
+        self.last_round: dict[str, int | None] = {}  # last round fetched, if the scan stopped early
 
     def _call(self, path: str) -> dict:
         data = self._get(BASE.format(key=self.key) + path)
@@ -97,7 +99,8 @@ class TheSportsDB:
         if played:
             first = max(1, max(int(e["intRound"]) for e in played) - LOOKBACK_ROUNDS)
         empty_streak, found_any = 0, False
-        for rnd in range(first, 61):
+        last = first + LOOKBACK_ROUNDS + AHEAD_ROUNDS if played else 60
+        for rnd in range(first, last + 1):
             got = self._call(f"/eventsround.php?id={league_id}&r={rnd}&s={season}").get("events") or []
             for ev in got:
                 events[str(ev.get("idEvent"))] = ev
@@ -107,6 +110,8 @@ class TheSportsDB:
                 empty_streak += 1
                 if (found_any and empty_streak >= 3) or (not found_any and rnd >= first + LOOKBACK_ROUNDS + 3):
                     break
+        # Rounds after `rnd` weren't asked for, so their absence means nothing.
+        self.last_round[league_id] = rnd if rnd == last else None
         log.info("TheSportsDB league %s: rounds %d-%d, %d events", league_id, first, rnd, len(events))
         if not events:
             self._failed[league_id] = f"TheSportsDB has no {season} events for league {league_id}"

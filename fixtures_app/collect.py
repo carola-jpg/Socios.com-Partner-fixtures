@@ -219,7 +219,11 @@ def collect(partners: list[Partner], espn: ESPN, id_cache: dict, tsdb: TheSports
                 seen_days.add(day)
                 kept += 1
             total += kept
-            coverage.append({"partner": p.name, "slug": slug, "competition": comp_label,
+            if slug.startswith("tsdb:") and src.tsdb.last_round.get(slug[5:]):
+                coverage_extra = {"last_round": src.tsdb.last_round[slug[5:]]}
+            else:
+                coverage_extra = {}
+            coverage.append({**coverage_extra, "partner": p.name, "slug": slug, "competition": comp_label,
                              "result": f"{kept} fixture(s)" if kept else "No upcoming fixtures"})
         # Only for partners that rely on ESPN alone: a partner whose league comes from
         # TheSportsDB (e.g. Legia Warsaw) isn't expected to be found on ESPN.

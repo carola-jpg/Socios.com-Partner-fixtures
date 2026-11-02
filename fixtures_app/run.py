@@ -104,8 +104,13 @@ def main(argv=None, espn: ESPN | None = None, now: datetime | None = None,
     seen = {state.key(f) for f in fetched}
     # A competition that couldn't be fetched this run says nothing about its fixtures.
     failed = {c["slug"] for c in coverage if c["result"].startswith("Not available")}
+    # TheSportsDB leagues are only read a few rounds ahead; later rounds weren't checked.
+    last_round = {c["slug"]: c["last_round"] for c in coverage if c.get("last_round")}
     for k, rec in new_state.items():
         if k in seen or rec.get("slug") in failed:
+            continue
+        rnd = (rec.get("round") or "").replace("Round ", "")
+        if rec.get("slug") in last_round and rnd.isdigit() and int(rnd) > last_round[rec["slug"]]:
             continue
         dt = excel.uk_dt(rec.get("date_utc", ""))
         if dt and dt >= now and not rec.get("change_note", "").startswith("Not in latest feed"):
