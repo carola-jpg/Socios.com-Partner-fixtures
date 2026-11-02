@@ -100,7 +100,12 @@ def main():
                 "Apollon,Apollon Limassol|Apollon,CYP,home,,,,yes\n")
 
     def tsdb_get(url):
-        if "eventsseason" in url and "id=4630" in url:
+        if "eventspastleague" in url and "id=4630" in url:
+            return {"events": [{"idEvent": "8999", "strSeason": "2026-2027", "intRound": "10",
+                                "strHomeTeam": "Omonia Nicosia", "strAwayTeam": "Apollon Limassol"}]}
+        if "eventsround" in url and "id=4630" in url and "r=6&" in url:
+            raise AssertionError("rounds before 7 should be skipped (latest played 10, look back 3)")
+        if "eventsround" in url and "id=4630" in url and "r=11&" in url:
             return {"events": [
                 {"idEvent": "9001", "strHomeTeam": "Apollon Limassol", "strAwayTeam": "Omonia Nicosia",
                  "idHomeTeam": "1", "idAwayTeam": "2", "strTimestamp": "2026-11-21T17:00:00",

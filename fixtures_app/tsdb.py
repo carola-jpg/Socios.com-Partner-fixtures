@@ -23,6 +23,7 @@ from .espn import NotAvailable
 
 log = logging.getLogger(__name__)
 BASE = "https://www.thesportsdb.com/api/v1/json/{key}"
+LOOKBACK_ROUNDS = 3  # catches matches from recent rounds that were moved
 FINISHED = ("finished", "ft", "aet", "pen", "after")
 
 
@@ -81,17 +82,22 @@ class TheSportsDB:
         return data or {}
 
     def league_events(self, league_id: str, today: date) -> tuple[str | None, list[dict]]:
-        """All events this season: the whole-season list (capped on the free key) plus round by round."""
+        """This season's events from a few rounds before the latest played round onwards."""
         if league_id in self._cache:
             return self._name.get(league_id), self._cache[league_id]
         if league_id in self._failed:
             raise NotAvailable(self._failed[league_id])
         season = season_for(today)
         events: dict[str, dict] = {}
-        for ev in self._call(f"/eventsseason.php?id={league_id}&s={season}").get("events") or []:
-            events[str(ev.get("idEvent"))] = ev
-        empty_streak, found_any = 0, bool(events)
-        for rnd in range(1, 41):
+        # Start a few rounds before the latest one played, instead of at round 1: earlier
+        # rounds are over, and asking for them used up the free key's rate limit.
+        first = 1
+        played = [e for e in self._call(f"/eventspastleague.php?id={league_id}").get("events") or []
+                  if e.get("strSeason") == season and str(e.get("intRound") or "").isdigit()]
+        if played:
+            first = max(1, max(int(e["intRound"]) for e in played) - LOOKBACK_ROUNDS)
+        empty_streak, found_any = 0, False
+        for rnd in range(first, 61):
             got = self._call(f"/eventsround.php?id={league_id}&r={rnd}&s={season}").get("events") or []
             for ev in got:
                 events[str(ev.get("idEvent"))] = ev
@@ -99,8 +105,9 @@ class TheSportsDB:
                 found_any, empty_streak = True, 0
             else:
                 empty_streak += 1
-                if (found_any and empty_streak >= 3) or (not found_any and rnd >= 3):
+                if (found_any and empty_streak >= 3) or (not found_any and rnd >= first + LOOKBACK_ROUNDS + 3):
                     break
+        log.info("TheSportsDB league %s: rounds %d-%d, %d events", league_id, first, rnd, len(events))
         if not events:
             self._failed[league_id] = f"TheSportsDB has no {season} events for league {league_id}"
             raise NotAvailable(self._failed[league_id])
