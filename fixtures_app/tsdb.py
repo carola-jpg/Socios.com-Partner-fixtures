@@ -30,7 +30,7 @@ FINISHED = ("finished", "ft", "aet", "pen", "after")
 
 # Total time the whole run may spend waiting out TheSportsDB rate limits. After that,
 # remaining TheSportsDB leagues are skipped for this run (their fixtures are kept as they were).
-WAIT_BUDGET = 8 * 60
+WAIT_BUDGET = 12 * 60
 _waited = 0.0
 
 
