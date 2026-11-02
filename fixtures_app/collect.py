@@ -221,7 +221,10 @@ def collect(partners: list[Partner], espn: ESPN, id_cache: dict, tsdb: TheSports
             total += kept
             coverage.append({"partner": p.name, "slug": slug, "competition": comp_label,
                              "result": f"{kept} fixture(s)" if kept else "No upcoming fixtures"})
-        if not pid and total == 0 and any(not s.startswith("tsdb:") for s in p.competitions):
+        # Only for partners that rely on ESPN alone: a partner whose league comes from
+        # TheSportsDB (e.g. Legia Warsaw) isn't expected to be found on ESPN.
+        if (not pid and total == 0 and any(not s.startswith("tsdb:") for s in p.competitions)
+                and not any(s.startswith("tsdb:") for s in p.competitions)):
             coverage.append({"partner": p.name, "slug": "-", "competition": "-",
                              "result": "Team not found on ESPN: add its ESPN id or another name in partners.csv"})
     return list(fixtures.values()), coverage
