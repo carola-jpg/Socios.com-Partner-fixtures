@@ -26,7 +26,14 @@ BASE = "https://www.thesportsdb.com/api/v1/json/{key}"
 FINISHED = ("finished", "ft", "aet", "pen", "after")
 
 
+# Total time the whole run may spend waiting out TheSportsDB rate limits. After that,
+# remaining TheSportsDB leagues are skipped for this run (their fixtures are kept as they were).
+WAIT_BUDGET = 8 * 60
+_waited = 0.0
+
+
 def _http_get(url: str) -> dict:
+    global _waited
     for attempt in range(4):
         try:
             r = requests.get(url, headers={"User-Agent": "partner-fixtures"}, timeout=20)
@@ -37,7 +44,10 @@ def _http_get(url: str) -> dict:
             continue
         if r.status_code == 429:
             wait = min(int(r.headers.get("Retry-After") or 60), 180)
+            if _waited + wait > WAIT_BUDGET:
+                raise NotAvailable(f"TheSportsDB rate limit: gave up after waiting {_waited:.0f}s in total")
             log.warning("TheSportsDB rate limit, waiting %ss", wait)
+            _waited += wait
             time.sleep(wait)
             continue
         if r.status_code >= 400:

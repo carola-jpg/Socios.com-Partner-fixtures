@@ -6,6 +6,7 @@ import argparse
 import json
 import logging
 import os
+import re
 import sys
 from datetime import datetime, timedelta, timezone
 
@@ -24,6 +25,26 @@ log = logging.getLogger("fixtures")
 
 # Slack only mentions matches at least this many days away (the Excel file still lists all).
 ALERT_MIN_DAYS = int(os.environ.get("ALERT_MIN_DAYS") or 5)
+
+
+# Which changes are worth a Slack message.
+ALERT_CHANGES = ("Date changed", "Kick-off time changed", "Kick-off time confirmed", "Status:")
+
+
+def is_league(slug: str) -> bool:
+    """League competitions (e.g. ita.1, eng.2, bra.camp.paulista, TheSportsDB leagues),
+    as opposed to cups, European competitions and internationals."""
+    slug = slug or ""
+    return bool(re.fullmatch(r"[a-z]{3}\.\d", slug)) or slug.startswith(("bra.camp.", "tsdb:"))
+
+
+def to_alert(added: list[dict], changed: list[dict], now: datetime) -> tuple[list[dict], list[dict]]:
+    """New cup/European/international fixtures, plus date or kick-off changes in any
+    competition, for matches at least ALERT_MIN_DAYS away."""
+    new = [r for r in added if not is_league(r.get("slug", "")) and far_enough(r, now)]
+    moved = [r for r in changed
+             if any(n in (r.get("change_note") or "") for n in ALERT_CHANGES) and far_enough(r, now)]
+    return new, moved
 
 
 def far_enough(r: dict, now: datetime, days: int = ALERT_MIN_DAYS) -> bool:
@@ -81,8 +102,10 @@ def main(argv=None, espn: ESPN | None = None, now: datetime | None = None,
 
     # Future fixtures we knew about but that weren't in today's feed: flag them for a manual check.
     seen = {state.key(f) for f in fetched}
+    # A competition that couldn't be fetched this run says nothing about its fixtures.
+    failed = {c["slug"] for c in coverage if c["result"].startswith("Not available")}
     for k, rec in new_state.items():
-        if k in seen:
+        if k in seen or rec.get("slug") in failed:
             continue
         dt = excel.uk_dt(rec.get("date_utc", ""))
         if dt and dt >= now and not rec.get("change_note", "").startswith("Not in latest feed"):
@@ -96,11 +119,11 @@ def main(argv=None, espn: ESPN | None = None, now: datetime | None = None,
              counts["upcoming"], counts["past"])
 
     missing = sorted({c["partner"] for c in coverage if c["result"].startswith("Team not found")})
-    alert_new = [r for r in added if far_enough(r, now)]
-    alert_changed = [r for r in changed if far_enough(r, now)]
+    alert_new, alert_changed = to_alert(added, changed, now)
     skipped = len(added) + len(changed) - len(alert_new) - len(alert_changed)
     if skipped:
-        log.info("Not sent to Slack: %d new/changed fixture(s) less than %d days away", skipped, ALERT_MIN_DAYS)
+        log.info("Not sent to Slack: %d new league fixture(s), stadium-only changes or matches less "
+                 "than %d days away", skipped, ALERT_MIN_DAYS)
     messages = slack.build_messages(alert_new, alert_changed, excel_url(), first_run, counts["upcoming"], missing)
     if not messages:
         log.info("Nothing new to report to Slack.")

@@ -59,8 +59,8 @@ def build_messages(new: list[dict], changed: list[dict], excel_url: str | None, 
             {"type": "header", "text": {"type": "plain_text", "text": ":soccer: Partner fixtures are set up"}},
             {"type": "section", "text": {"type": "mrkdwn", "text":
                 f"First load found *{total} upcoming fixtures* for *{n_partners} partners*. "
-                "From now on this channel gets a message every Monday and Friday when new fixtures are "
-                "announced or kick-off times, dates or stadiums change."}},
+                "From now on this channel gets a message every Monday and Friday when new cup, European "
+                "or international fixtures are announced, or a match date or kick-off time changes."}},
         ] + footer}]
 
     if not new and not changed:
@@ -70,9 +70,12 @@ def build_messages(new: list[dict], changed: list[dict], excel_url: str | None, 
     for r in sorted(new + changed, key=lambda r: (r["partner"], r.get("date_utc") or "")):
         by_partner[r["partner"]].append(r)
 
-    title = f":soccer: {len(new)} new fixture{'s' if len(new) != 1 else ''}"
+    parts = []
+    if new:
+        parts.append(f"{len(new)} new fixture{'s' if len(new) != 1 else ''}")
     if changed:
-        title += f", {len(changed)} update{'s' if len(changed) != 1 else ''}"
+        parts.append(f"{len(changed)} date/time change{'s' if len(changed) != 1 else ''}")
+    title = ":soccer: " + ", ".join(parts)
     sections = []
     for partner, rows in by_partner.items():
         chunk = f"*{partner}*"

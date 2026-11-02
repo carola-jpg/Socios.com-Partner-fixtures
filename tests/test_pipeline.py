@@ -156,8 +156,9 @@ def main():
     body = "\n".join(b["text"]["text"] for b in msg["blocks"] if b["type"] == "section")
     print("\nRun 2 Slack title:", msg["text"])
     print(body)
-    assert "1 new fixture, 2 updates" in msg["text"], msg["text"]
-    assert "AC Milan v Internazionale" in body
+    # The new fixture is a league match, so it's in Excel but not in Slack.
+    assert msg["text"] == ":soccer: 2 date/time changes", msg["text"]
+    assert "AC Milan v Internazionale" not in body
     assert "Date changed" in body and "Kick-off time confirmed" in body
     wb = load_workbook(run.EXCEL)
     up = list(wb["Upcoming"].iter_rows(min_row=2, values_only=True))
@@ -184,6 +185,22 @@ def main():
     print("\nAll checks passed")
 
 
+def test_alert_rules():
+    now = datetime(2026, 11, 2, 7, tzinfo=timezone.utc)
+    later = "2026-12-01T19:45Z"
+    added = [{"slug": "ita.1", "date_utc": later}, {"slug": "ita.coppa_italia", "date_utc": later},
+             {"slug": "uefa.champions", "date_utc": later}, {"slug": "fifa.friendly", "date_utc": later},
+             {"slug": "tsdb:4422", "date_utc": later}, {"slug": "bra.camp.paulista", "date_utc": later},
+             {"slug": "eng.fa", "date_utc": "2026-11-04T19:45Z"}]  # cup, but only 2 days away
+    changed = [{"slug": "ita.1", "date_utc": later, "change_note": "Kick-off time changed"},
+               {"slug": "ita.1", "date_utc": later, "change_note": "Stadium changed"},
+               {"slug": "tsdb:4629", "date_utc": later, "change_note": "Date changed"},
+               {"slug": "eng.1", "date_utc": later, "change_note": "Status: Postponed"}]
+    new, moved = run.to_alert(added, changed, now)
+    assert [r["slug"] for r in new] == ["ita.coppa_italia", "uefa.champions", "fifa.friendly"], new
+    assert [r["change_note"] for r in moved] == ["Kick-off time changed", "Date changed", "Status: Postponed"]
+
+
 def test_alert_window():
     now = datetime(2026, 11, 2, 7, tzinfo=timezone.utc)
     assert not run.far_enough({"date_utc": "2026-11-04T19:45Z"}, now, 5)   # 2 days away
@@ -194,4 +211,5 @@ def test_alert_window():
 
 if __name__ == "__main__":
     test_alert_window()
+    test_alert_rules()
     main()

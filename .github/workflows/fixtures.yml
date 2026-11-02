@@ -2,8 +2,9 @@ name: Partner fixtures
 
 on:
   schedule:
-    # Every Monday and Friday at 07:00 UTC (07:00 UK in winter, 08:00 in summer)
-    - cron: "0 7 * * 1,5"
+    # Every Monday and Friday at 06:43 UTC (06:43 UK in winter, 07:43 in summer).
+    # Not on the hour: GitHub delays or drops many scheduled runs at :00.
+    - cron: "43 6 * * 1,5"
   workflow_dispatch:
     inputs:
       debug:
@@ -58,7 +59,7 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Fixtures update $(date -u +%Y-%m-%d)"
-            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git pull --rebase -X theirs origin "${GITHUB_REF_NAME}"
             git push
           fi
 

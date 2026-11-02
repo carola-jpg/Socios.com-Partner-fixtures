@@ -5,9 +5,13 @@ national teams across leagues, cups, European/South American/Asian competitions 
 international matches. It then:
 
 - updates **`output/fixtures.xlsx`** (download it from this repo), and
-- posts to **Slack** when new fixtures are announced or a date, kick-off time or
-  stadium changes, for matches at least **5 days away** (closer matches are only in
-  the Excel file; change the number with an `ALERT_MIN_DAYS` repository variable).
+- posts to **Slack** when:
+  - a new **cup, European or international** fixture is announced (new league fixtures
+    are only added to the Excel file, since leagues publish the whole season at once), or
+  - any match's **date or kick-off time** changes, is confirmed, or it's postponed.
+
+  Only matches at least **5 days away** are posted; closer ones are in the Excel file.
+  Change the number with an `ALERT_MIN_DAYS` repository variable.
 
 By default only **home** fixtures are kept. Cup and European matches turn up
 automatically once a team has qualified or been drawn, as do play-offs and other later
@@ -48,8 +52,8 @@ In this repo: **Settings → Secrets and variables → Actions → New repositor
 3. After a few minutes Slack gets a "Partner fixtures are set up" message, and
    `output/fixtures.xlsx` appears in the repo.
 
-After that it runs by itself every **Monday and Friday at 07:00 UTC** (07:00 UK time in
-winter, 08:00 in summer). You can also run it any time with **Run workflow**.
+After that it runs by itself every **Monday and Friday at 06:43 UTC** (06:43 UK time in
+winter, 07:43 in summer). GitHub sometimes starts scheduled runs a little late. You can also run it any time with **Run workflow**.
 
 ---
 
@@ -59,7 +63,7 @@ winter, 08:00 in summer). You can also run it any time with **Run workflow**.
 |---|---|
 | About | When it was last updated, and a key to the colours |
 | Upcoming | Every announced fixture, earliest first, with kick-off in local time and UTC. Green = new this run, yellow = changed, orange = no longer in the feed (check it) |
-| New & changed | Only what changed in the latest run. Slack got the same list, minus matches less than 5 days away |
+| New & changed | Everything new or changed in the latest run. Slack only gets new cup/European/international fixtures and date or time changes, for matches 5+ days away |
 | By partner | Number of upcoming fixtures and the next match for each partner |
 | Coverage | Which competitions were checked for each partner and what was found |
 | Past | Fixtures whose date has passed |
